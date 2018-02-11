@@ -9,3 +9,10 @@
   background: #DD4B39;
   color: white;
 }
+
+.card {
+  opacity: 0.8;
+  border: solid 5px #fff;
+  border-radius: 5px;
+  box-shadow: 6px 4px 10px #000000;
+}
