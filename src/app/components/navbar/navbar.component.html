@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
   <div class="container">
-    <a href="" class="navbar-brand">Photo-App</a>
+    <a routerLink="/" class="navbar-brand">Photo-App</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -20,14 +20,38 @@
           <a href="" class="nav-link">{{'Se connecter'| translate}}</a>
         </li>
       </ul>
+      <!--
+      <div class="dropdown">
+        <div class="dropdown-menu">
 
-      <a (click)="switchLanguage('en')" class="mr-1">
-        <img src="../../../assets/flag-en.png" class="lang-icon" alt="">
-      </a>
+          <i class="fas fa-cog"></i>
+          <a (click)="switchLanguage('en')" class="dropdown-item">
+            <img src="../../../assets/flag-en.png" class="lang-icon" alt="">Fr
+          </a>
 
-      <a (click)="switchLanguage('fr')">
-        <img src="../../../assets/flag-fr.png" alt="">
-      </a>
+          <a (click)="switchLanguage('fr')" class="dropdown-item">
+            <img src="../../../assets/flag-fr.png" alt="">En
+          </a>
+        </div>
+      </div>
+
+    -->
+      <div class="dropdown">
+        <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-cog"></i>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a (click)="switchLanguage('en')" class="dropdown-item">
+            <img src="../../../assets/flags/en.png" class="lang-icon" alt=""> en
+          </a>
+
+          <a (click)="switchLanguage('fr')" class="dropdown-item">
+            <img src="../../../assets/flags/fr.png" alt=""> fr
+          </a>
+        </div>
+      </div>
+
+
     </div>
   </div>
 </nav>
