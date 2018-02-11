@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-not-found',
@@ -9,12 +9,8 @@ import { TranslateService } from '@ngx-translate/core';
 export class NotFoundComponent implements OnInit {
 
 
-  constructor(private translate: TranslateService) {
-    translate.setDefaultLang('fr');
-  }
+  constructor() {
 
-  switchLanguage(language: string): void {
-    this.translate.use(language);
   }
 
   ngOnInit() {

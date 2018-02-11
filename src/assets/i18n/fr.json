@@ -6,5 +6,21 @@
   "Creer un compte": "Creer un compte",
   "Ou": "ou",
   "avec": "avec",
-  "Se souvenir de moi": "Se souvenir de moi"
+  "Se souvenir de moi": "Se souvenir de moi",
+  "Page Précédente": "Page Précédente",
+  "Retour à l' accueil": "Retour à l' accueil",
+  "Désolé, Page non trouvéee": "Désolé, Page non trouvée",
+  "Inscription": "Inscription",
+
+  "Nom": "Nom",
+  "Le nom est obligatoire": "Le nom est obligatoire",
+  "Le nom doit être de au moins 2 caractères": "Le nom doit être de au moins 2 caractères",
+  "Prenom": "Prenom",
+  "Le prenom est obligatoire": "Le prenom est obligatoire",
+  "Le prenom doit être de au moins 2 caractères": "Le prenom doit être de au moins 2 caractères",
+  "L' email est obligatoire": "L' email est obligatoire",
+  "L'email n'est pas valide": "L'email n'est pas valide",
+  "Le mot de passe est obligatoire": "Le mot de passe est obligatoire",
+  "Le mot de passe doit contenit au moins une majuscule, une minuscule , un chiffre et un caractère spéciale": "Le mot de passe doit contenit au moins une majuscule, une minuscule , un chiffre et un caractère spéciale",
+  "Je m'inscris": "Je m'inscris"
 }

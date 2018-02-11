@@ -6,5 +6,21 @@
   "Creer un compte": "Create an account",
   "Ou": "or",
   "avec": "with",
-  "Se souvenir de moi": "Remember Me"
+  "Se souvenir de moi": "Remember Me",
+  "Page Précédente": "Go Back",
+  "Retour à l' accueil": "Back To Home Page",
+  "Désolé, Page non trouvée": "Sorry! Page not found.",
+  "Inscription": "Registration",
+
+  "Nom": "Lastname",
+  "Le nom est obligatoire": "Last name required",
+  "Le nom doit être de au moins 2 caractères": "Must be at least 2 characters",
+  "Prenom": "Firstname",
+  "Le prenom est obligatoire": "First name required",
+  "Le prenom doit être de au moins 2 caractères": "Must be at least 2 characters",
+  "L' email est obligatoire": "Email  required",
+  "L'email n'est pas valide": "Email is not valid",
+  "Le mot de passe est obligatoire": "Password is required",
+  "Le mot de passe doit contenit au moins une majuscule, une minuscule , un chiffre et un caractère spéciale": "Password should be minimum eight in length and contains at least one upper case letter, one lower case letter, one digit and one special character",
+  "Je m'inscris": "I register"
 }
