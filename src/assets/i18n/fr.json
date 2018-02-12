@@ -22,5 +22,7 @@
   "L'email n'est pas valide": "L'email n'est pas valide",
   "Le mot de passe est obligatoire": "Le mot de passe est obligatoire",
   "Le mot de passe doit contenit au moins une majuscule, une minuscule , un chiffre et un caractère spéciale": "Le mot de passe doit contenit au moins une majuscule, une minuscule , un chiffre et un caractère spéciale",
-  "Je m'inscris": "Je m'inscris"
+  "Je m'inscris": "Je m'inscris",
+  "Date de naissance": "Date de naissance",
+  "La date est obligatoire": "La date est obligatoire"
 }

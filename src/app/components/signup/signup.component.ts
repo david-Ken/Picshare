@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user';
+import { MyDatePickerModule } from 'mydatepicker';
+import { IMyDpOptions } from 'mydatepicker';
 
 @Component({
   selector: 'app-signup',
@@ -12,9 +14,14 @@ export class SignupComponent implements OnInit {
     firstName: '',
     lastName: '',
     email: '',
-    password: ''
+    password: '',
+    birthdate: null
   }
 
+
+  public myDatePickerOptions: IMyDpOptions = {
+    dateFormat: 'dd/mm/yyyy',
+  };
 
   constructor() { }
 
