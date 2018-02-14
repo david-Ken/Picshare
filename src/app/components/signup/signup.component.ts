@@ -9,7 +9,6 @@ import { IMyDpOptions } from 'mydatepicker';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
   user: User = {
     firstName: '',
     lastName: '',
