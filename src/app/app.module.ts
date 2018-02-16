@@ -14,6 +14,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { PhotoBoardComponent } from './components/photo-board/photo-board.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -26,7 +27,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     LoginFormComponent,
     HomeComponent,
     NotFoundComponent,
-    SignupComponent
+    SignupComponent,
+    PhotoBoardComponent
   ],
   imports: [
     BrowserModule,

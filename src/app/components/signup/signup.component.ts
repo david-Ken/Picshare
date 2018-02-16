@@ -25,7 +25,6 @@ export class SignupComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
   }
 
   onSubmit({ value, valid }: { value: User, valid: boolean }) {
