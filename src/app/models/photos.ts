@@ -11,5 +11,6 @@ export interface photos {
     image: string,
     likeNumber: number,
     commentNumber: number,
+    shareNumber: number,
     comments?: Comments[]
 }
