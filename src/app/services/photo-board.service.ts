@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of'
 
 import { photos } from '../models/photos';
 import { Comments } from '../models/comments';
@@ -6,7 +8,7 @@ import { Comments } from '../models/comments';
 @Injectable()
 export class PhotoBoardService {
   photoBoardData: photos[];
-
+  data: Observable<any>;
 
   comments: Comments = {
     firstName: null,
@@ -74,8 +76,9 @@ export class PhotoBoardService {
 
   }
 
-  getPhotoboard(): photos[] {
-    return this.photoBoardData;
+  //asynchronous
+  getPhotoboard(): Observable<photos[]> {
+    return of(this.photoBoardData);
   }
 
   addNewComment(newComment) {

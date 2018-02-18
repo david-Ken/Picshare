@@ -23,7 +23,11 @@ export class PhotoBoardComponent implements OnInit {
   constructor(private photoBoardDataService: PhotoBoardService) { }
 
   ngOnInit() {
-    this.photoboard = this.photoBoardDataService.getPhotoboard();
+
+    this.photoBoardDataService.getPhotoboard().subscribe(data => {
+      this.photoboard = data;
+    });
+
     console.log(this.newComment);
   }
 
@@ -32,6 +36,12 @@ export class PhotoBoardComponent implements OnInit {
     // Enter keyboard code == 13
     if (event.charCode == 13) {
       this.photoBoardDataService.addNewComment(this.photoBoardDataService.comments);
+
+      this.newComment = {
+        firstName: 'black',
+        lastName: 'panther',
+        comment: null,
+      }
     }
 
 
