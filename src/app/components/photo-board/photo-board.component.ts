@@ -15,6 +15,7 @@ export class PhotoBoardComponent implements OnInit {
   testt: boolean = false;
 
   newComment: Comments = {
+    id: 'xx',
     firstName: 'black',
     lastName: 'panther',
     comment: null,
@@ -38,6 +39,7 @@ export class PhotoBoardComponent implements OnInit {
       this.photoBoardDataService.addNewComment(this.photoBoardDataService.comments);
 
       this.newComment = {
+        id: 'xx',
         firstName: 'black',
         lastName: 'panther',
         comment: null,
