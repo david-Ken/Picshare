@@ -65,7 +65,7 @@
 
       <hr>
       <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Ajouter un commentaire ..." [(ngModel)]="curentComment.comment" (keypress)="addComment()"
+        <input type="text" class="form-control" placeholder="Ajouter un commentaire ..." [(ngModel)]="newComment.comment" (keypress)="addComment($event)"
           aria-label="Recipient's username" aria-describedby="basic-addon2">
 
       </div>

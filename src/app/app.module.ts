@@ -15,6 +15,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { PhotoBoardComponent } from './components/photo-board/photo-board.component';
+import { PhotoBoardService } from './services/photo-board.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -44,7 +45,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     AppRoutingModule
   ],
-  providers: [],
+  providers: [PhotoBoardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
