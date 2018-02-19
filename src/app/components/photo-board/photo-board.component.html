@@ -34,7 +34,7 @@
 
       <div>
         <span class="ml-2 mr-3">
-          <i class="fa fa-heart"></i> {{photo.likeNumber}}K
+          <i class="fa fa-heart" [ngClass]="{'liked':photo.like && true}" (click)="setColor(photo.id)"></i> {{photo.likeNumber}}K
         </span>
         <span class="">
           <i class="fa fa-comment"></i> {{photo.commentNumber}}
@@ -55,7 +55,7 @@
 
 
 
-      <div *ngIf="testt">
+      <div *ngIf="isCommented">
         <div class="ml-2">
           <span class="font-weight-bold">{{currentComment.firstName}} {{currentComment.lastName}}</span>
           <span>{{currentComment.comment}}</span>

@@ -30,6 +30,7 @@ export class PhotoBoardService {
         online: '3 minutes',
         location: 'Los Angeles',
         description: 'Lorem ipsum dolor, sit amet consectetur adipisicing  elit. Cumque placeat dolorum, itaque libero error quisquam dolore ipsum ex autem. Sapiente voluptates voluptatibus quos laboriosam .',
+        like: false,
         image: 'img.jpg',
         likeNumber: 2,
         commentNumber: 55,
@@ -49,6 +50,7 @@ export class PhotoBoardService {
         online: '45 minutes',
         location: 'New  Heaven',
         description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque placeat dolorum, itaque libero error quisquam dolore ipsum ex autem.',
+        like: false,
         image: 'img01.jpg',
         likeNumber: 15,
         commentNumber: 10,
@@ -68,6 +70,7 @@ export class PhotoBoardService {
         online: '45 minutes',
         location: 'New  Heaven',
         description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque placeat dolorum, itaque libero error quisquam dolore ipsum ex autem.',
+        like: false,
         image: 'img02.jpg',
         likeNumber: 30,
         commentNumber: 45,
@@ -94,6 +97,21 @@ export class PhotoBoardService {
       if (this.photoBoardData[i].id == commentedPhoto.id) {
         this.photoBoardData[i].comments.push(this.comments);
         this.photoBoardData[i].commentNumber++;
+      }
+    }
+  }
+
+  updateLike(likedPhotoId) {
+    let i: number = 0;
+    for (i = 0; i < this.photoBoardData.length; i++) {
+      if (this.photoBoardData[i].id == likedPhotoId) {
+        this.photoBoardData[i].like = !this.photoBoardData[i].like;
+
+        if (this.photoBoardData[i].like) {
+          this.photoBoardData[i].likeNumber++;
+        } else {
+          this.photoBoardData[i].likeNumber--;
+        }
       }
     }
 

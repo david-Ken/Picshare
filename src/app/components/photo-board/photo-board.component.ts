@@ -12,7 +12,7 @@ import { PhotoBoardService } from '../../services/photo-board.service';
 
 export class PhotoBoardComponent implements OnInit {
   photoboard: photos[];
-  testt: boolean = false;
+  isCommented: boolean = false;
 
   newComment: Comments = {
     id: 'xx',
@@ -46,6 +46,10 @@ export class PhotoBoardComponent implements OnInit {
         comment: null,
       }
     }
+  }
+
+  setColor(likedPhotoId) {
+    this.photoBoardDataService.updateLike(likedPhotoId);
   }
 
 }

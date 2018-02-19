@@ -9,7 +9,7 @@ export interface photos {
     online: string,
     location: string,
     description: string,
-    // like :boolean,
+    like: boolean,
     image: string,
     likeNumber: number,
     commentNumber: number,
