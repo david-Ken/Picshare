@@ -8,6 +8,8 @@ import { Comments } from '../models/comments';
 @Injectable()
 export class PhotoBoardService {
   photoBoardData: photos[];
+  commentedPhoto: photos;
+
   data: Observable<any>;
 
   comments: Comments = {
@@ -20,6 +22,7 @@ export class PhotoBoardService {
   constructor() {
     this.photoBoardData = [
       {
+        id: 'photo1',
         firstName: 'Jessica',
         lastName: 'Jones',
         pseudo: '@JessJones',
@@ -38,6 +41,7 @@ export class PhotoBoardService {
         ]
       },
       {
+        id: 'photo2',
         firstName: 'Axelle',
         lastName: 'Sheeran',
         pseudo: '@blueDream',
@@ -56,6 +60,7 @@ export class PhotoBoardService {
         ]
       },
       {
+        id: 'photo3',
         firstName: 'Rita',
         lastName: 'Ora',
         pseudo: '@Pristina',
@@ -77,13 +82,21 @@ export class PhotoBoardService {
 
   }
 
-  //asynchronous
+  //asynchronous  get
   getPhotoboard(): Observable<photos[]> {
     return of(this.photoBoardData);
   }
 
-  addNewComment(newComment) {
-    this.photoBoardData[0].comments.push(this.comments);
+  // create
+  addNewComment(newComment, commentedPhoto) {
+    let i: number = 0;
+    for (i = 0; i < this.photoBoardData.length; i++) {
+      if (this.photoBoardData[i].id == commentedPhoto.id) {
+        this.photoBoardData[i].comments.push(this.comments);
+        this.photoBoardData[i].commentNumber++;
+      }
+    }
+
   }
 
 }

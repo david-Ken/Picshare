@@ -32,12 +32,13 @@ export class PhotoBoardComponent implements OnInit {
     console.log(this.newComment);
   }
 
-  addComment(event) {
+  addComment(event, photo) {
     this.photoBoardDataService.comments = this.newComment;
+    this.photoBoardDataService.commentedPhoto = photo;
+
     // Enter keyboard code == 13
     if (event.charCode == 13) {
-      this.photoBoardDataService.addNewComment(this.photoBoardDataService.comments);
-
+      this.photoBoardDataService.addNewComment(this.photoBoardDataService.comments, this.photoBoardDataService.commentedPhoto);
       this.newComment = {
         id: 'xx',
         firstName: 'black',
@@ -45,8 +46,6 @@ export class PhotoBoardComponent implements OnInit {
         comment: null,
       }
     }
-
-
   }
 
 }
