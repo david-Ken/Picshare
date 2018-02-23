@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/AuthService/auth.service';
 
 @Component({
   selector: 'app-login-form',
@@ -10,11 +11,18 @@ export class LoginFormComponent implements OnInit {
     email: null,
     password: null
   }
-  constructor() {
-
+  constructor(private auth: AuthService) {
   }
 
   ngOnInit() {
+  }
+
+  onSubmit({ value, valid }: { value, valid: boolean }) {
+    if (!valid) {
+      console.log("email or password invalid");
+    } else {
+      console.log(value);
+    }
   }
 
 }

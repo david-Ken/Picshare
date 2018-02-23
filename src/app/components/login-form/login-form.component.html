@@ -66,7 +66,7 @@
         </div>
 
         <!--button type="submit" class="btn btn-primary btn-block">{{'Se Connecter' | translate}}</button-->
-        <button [disabled]="!loginForm.form.valid" class="btn btn-block mb-3" [ngClass]="{'btn-primary': loginForm.form.valid && true}">{{'Se Connecter' | translate}}</button>
+        <button [disabled]="!loginForm.form.valid" class="btn btn-block mb-3" [ngClass]="{'btn-primary': loginForm.form.valid }">{{'Se Connecter' | translate}}</button>
       </form>
       <a routerLink="signup" class="text-center mt-3">{{'Creer un compte' | translate }}</a>
       <a href="#" class="text-center mb-3">{{'Ou' | translate}} {{'Se connecter' | translate}} {{'avec' | translate}}</a>
@@ -83,7 +83,7 @@
 
       <div>
         <span>
-          <button type="button" class="btn btn-block fa-facebook-custom mb-1">
+          <button type="button" (click)="auth.login()" class="btn btn-block fa-facebook-custom mb-1">
             <i class="fa fa-facebook "></i> Facebook</button>
         </span>
 

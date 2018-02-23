@@ -6,10 +6,12 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { PhotoBoardComponent } from './components/photo-board/photo-board.component';
 
+import { AuthGuard } from './AuthGuard/auth.guard';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'home', component: PhotoBoardComponent },
+  { path: 'home', component: PhotoBoardComponent/*, canActivate: [AuthGuard] */ },
   { path: '**', component: NotFoundComponent },
 ];
 

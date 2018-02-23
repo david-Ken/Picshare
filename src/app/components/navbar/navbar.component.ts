@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
+import { AuthService } from '../../services/AuthService/auth.service';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -8,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private auth: AuthService) {
     translate.setDefaultLang('fr');
   }
 
