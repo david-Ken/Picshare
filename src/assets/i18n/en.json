@@ -24,5 +24,6 @@
   "Le mot de passe doit contenit au moins une majuscule, une minuscule , un chiffre et un caractère spéciale": "Password should be minimum eight in length and contains at least one upper case letter, one lower case letter, one digit and one special character",
   "Je m'inscris": "I register",
   "Date de naissance": "Birthdate",
-  "La date est obligatoire": "Birthdate is required"
+  "La date est obligatoire": "Birthdate is required",
+  "Ajouter un commentaire": "Add a new comment"
 }

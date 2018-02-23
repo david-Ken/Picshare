@@ -32,7 +32,7 @@ export class PhotoBoardComponent implements OnInit {
     console.log(this.newComment);
   }
 
-  addComment(event, photo) {
+  addComment(event, photo: photos) {
     this.photoBoardDataService.comments = this.newComment;
     this.photoBoardDataService.commentedPhoto = photo;
 
