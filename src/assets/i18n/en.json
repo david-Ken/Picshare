@@ -25,5 +25,6 @@
   "Je m'inscris": "I register",
   "Date de naissance": "Birthdate",
   "La date est obligatoire": "Birthdate is required",
-  "Ajouter un commentaire": "Add a new comment"
+  "Ajouter un commentaire": "Add a new comment",
+  "Se Déconnecter": "Logout"
 }

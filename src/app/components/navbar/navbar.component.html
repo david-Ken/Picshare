@@ -11,7 +11,10 @@
           <a routerLink="signup" class="nav-link">{{'S\'inscrire' | translate}}</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">{{'Se connecter'| translate}}</a>
+          <a href="#" *ngIf="!auth.isAuthenticated()" class="nav-link">{{'Se connecter'| translate}}</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" *ngIf="auth.isAuthenticated()" (click)="auth.logout()" class="nav-link">{{'Se Déconnecter'| translate}}</a>
         </li>
       </ul>
 

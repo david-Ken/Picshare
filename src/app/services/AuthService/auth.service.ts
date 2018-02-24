@@ -13,7 +13,8 @@ export class AuthService {
     responseType: 'token id_token',
     audience: 'https://davidken.eu.auth0.com/userinfo',
     redirectUri: 'http://localhost:4200/home',
-    scope: 'openid'
+    scope: 'openid profile'
+    // scope: 'openid%20profile%20email&response_type=id_token&client_id=dtLEHYwXcQzarehOmVF87KzZNzdjplnQ&redirect_uri=http://localhost:4200/home&nonce=YOUR_CRYPTOGRAPHIC_NONCE&state=YOUR_OPAQUE_VALUE'
   });
 
   constructor(public router: Router) { }
@@ -59,4 +60,38 @@ export class AuthService {
     return new Date().getTime() < expiresAt;
   }
 
+  //getting user profile info from auth0
+  userProfile: any;
+
+  public getProfile(cb): void {
+    const accessToken = localStorage.getItem('access_token');
+    if (!accessToken) {
+      throw new Error('Access Token must exist to fetch profile');
+    }
+
+    const self = this;
+    this.auth0.client.userInfo(accessToken, (err, profile) => {
+      if (profile) {
+        self.userProfile = profile;
+        console.log(self.userProfile);
+      }
+      cb(err, profile);
+    });
+  }
+
+  /*
+    public getProfile(): void {
+    const accessToken = localStorage.getItem('access_token');
+    if (!accessToken) {
+      throw new Error('Access token must exist to fetch profile');
+    }
+    const self = this;
+    this.auth0.client.userInfo(accessToken, (err, profile) => {
+      if (profile) {
+        console.log(profile);
+      }
+    });
+  }
+
+  */
 }
