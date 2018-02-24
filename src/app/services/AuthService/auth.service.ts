@@ -28,6 +28,7 @@ export class AuthService {
       if (authResult && authResult.accessToken && authResult.idToken) {
         window.location.hash = '';
         this.setSession(authResult);
+        this.getProfile();
         this.router.navigate(['/home']);
       } else if (err) {
         this.router.navigate(['/home']);
@@ -63,7 +64,7 @@ export class AuthService {
   //getting user profile info from auth0
   userProfile: any;
 
-  public getProfile(cb): void {
+  public getProfile(): void {
     const accessToken = localStorage.getItem('access_token');
     if (!accessToken) {
       throw new Error('Access Token must exist to fetch profile');
@@ -75,23 +76,7 @@ export class AuthService {
         self.userProfile = profile;
         console.log(self.userProfile);
       }
-      cb(err, profile);
+      //cb(err, profile);
     });
   }
-
-  /*
-    public getProfile(): void {
-    const accessToken = localStorage.getItem('access_token');
-    if (!accessToken) {
-      throw new Error('Access token must exist to fetch profile');
-    }
-    const self = this;
-    this.auth0.client.userInfo(accessToken, (err, profile) => {
-      if (profile) {
-        console.log(profile);
-      }
-    });
-  }
-
-  */
 }

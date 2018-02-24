@@ -26,17 +26,17 @@ export class PhotoBoardComponent implements OnInit {
   constructor(private photoBoardDataService: PhotoBoardService, private auth: AuthService) { }
 
   ngOnInit() {
-    /* 
-    if (this.auth.userProfile) {
-      this.profile = this.auth.userProfile;
-      console.log(this.profile);
-    } else {
-      this.auth.getProfile((err, profile) => {
-        this.profile = profile;
-        console.log(this.profile);
-      });
-    }
-     */
+    /*
+        if (this.auth.userProfile) {
+          this.profile = this.auth.userProfile;
+          console.log(this.profile);
+        } else {
+          this.auth.getProfile((err, profile) => {
+            this.profile = profile;
+            console.log(this.profile);
+          });
+        }
+    */
     this.photoBoardDataService.getPhotoboard().subscribe(data => {
       this.photoboard = data;
     });
