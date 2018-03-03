@@ -16,9 +16,13 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { PhotoBoardComponent } from './components/photo-board/photo-board.component';
 import { PhotoBoardService } from './services/photo-board.service';
+import { ProfilComponent } from './components/profil/profil.component';
+import { EditProfilComponent } from './components/edit-profil/edit-profil.component';
+
 
 import { AuthService } from './services/AuthService/auth.service';
 import { AuthGuard } from './AuthGuard/auth.guard';
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -32,7 +36,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeComponent,
     NotFoundComponent,
     SignupComponent,
-    PhotoBoardComponent
+    PhotoBoardComponent,
+    ProfilComponent,
+    EditProfilComponent
   ],
   imports: [
     BrowserModule,
