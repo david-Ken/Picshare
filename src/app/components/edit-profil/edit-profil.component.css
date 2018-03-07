@@ -1,0 +1,62 @@
+#home-section {
+  background: url("../../../assets/profile/wall/wall-03.jpg");
+  background-size: cover;
+  /*background-attachment: fixed;*/
+  /*height: 55vh;*/
+  min-height: 55vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/*
+
+#home-section img {
+  background-size: cover;
+  background-attachment: fixed;
+  height: 55vh;
+  width: 100%;
+}
+
+*/
+
+#home-section .dark-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 55vh;
+  margin-top: 55px;
+}
+
+#home-section .home-inner {
+  padding-top: 150px;
+}
+
+hr {
+  border-top: 1px solid white;
+}
+
+.profil-stat {
+  color: rgb(192, 192, 192);
+}
+
+/*
+.my-icon {
+  width: 152px;
+  height: 152px;
+}
+*/
+
+.gallery {
+  position: absolute;
+  margin-top: 500px;
+}
+
+.profil-text-md {
+  font-size: 2rem;
+}
+
+.profil-text-sm {
+  font-size: 1rem;
+}
