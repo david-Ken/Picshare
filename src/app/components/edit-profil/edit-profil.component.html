@@ -6,8 +6,8 @@
       <div class="container ">
         <!-- profil section -->
         <div class="row ">
-          <div class="col-md-3">
-            <img src="../../../assets/photo-board-img/icon03.jpg" alt="icon" class=" img-fluid  rounded-circle  pull-left my-icon ">
+          <div class="col-md-3 pl-5">
+            <img src="../../../assets/photo-board-img/icon03.jpg" alt="icon" class=" img-fluid  rounded-circle  pull-left my-icon ml-5">
           </div>
           <div class="col-md-6 text-white">
             <div class="profil-text-md">Rebecca Carlton
@@ -29,7 +29,7 @@
               <ul class="list-inline">
                 <li class="list-inline-item mr-5">
                   <div class="font-weight-bold text-center">39</div>
-                  <div class="font-weight-bold">Photo</div>
+                  <div class="font-weight-bold">Photos</div>
                 </li>
                 <li class="list-inline-item mr-5">
                   <div class="font-weight-bold text-center">100K</div>
@@ -37,7 +37,7 @@
                 </li>
                 <li class="list-inline-item mr-5">
                   <div class="font-weight-bold text-center">300K</div>
-                  <div class="font-weight-bold">Abonnées</div>
+                  <div class="font-weight-bold">Abonnés</div>
                 </li>
                 <li class="list-inline-item mr-5">
                   <div class="font-weight-bold text-center">5</div>
@@ -54,10 +54,22 @@
     </div>
   </div>
 
+
   <!-- gallery -->
   <section>
     <div class=" gallery ml-5 mr-5">
-      <div class="row">
+      <!-- buttons -->
+      <a class="pull-right btn btn-secondary btn-circle btn-lg btn-lg-" data-toggle="modal" data-target=".bd-example-modal-lg">
+        <i class="fa fa-cog"></i>
+      </a>
+
+      <a class="pull-right btn btn-primary btn-circle btn-lg my-button-2" data-toggle="modal" data-target="#upload-modal">
+        <i class="fa fa-upload"></i>
+      </a>
+      <!-- /buttons -->
+
+
+      <div class="row ml-5 mr-5">
         <div class="col-md-3">
           <img src="../../../assets/photo-board-img/img02.jpg" alt="icon" class="img-fluid img-thumbnail tn">
         </div>
@@ -74,7 +86,7 @@
 
 
 
-      <div class="row ">
+      <div class="row ml-5 mr-5">
         <div class="col-md-3">
           <img src="../../../assets/profile/01.jpg" alt="icon" class=" img-fluid img-thumbnail tn ">
         </div>
@@ -91,3 +103,101 @@
     </div>
   </section>
   <!-- /gallery -->
+
+  <!-- setting modal -->
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Editer mon profil</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- test -->
+
+          <form class="form-horizontal">
+
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="email">Nom</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="email" placeholder="Changer mon nom">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="email">Prenom</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="email" placeholder="Changer mon prenom">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="email">Pseudo</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="email" placeholder="Changer mon pseudo">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="pwd">Password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="pwd" placeholder="Changer mon mot de passe">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label col-sm-4" for="pwd">Confirmation mot de passe</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="pwd" placeholder="Confirmer mon mot de passe">
+              </div>
+            </div>
+
+            <!-- Default textarea message -->
+            <label for="defaultFormContactMessageEx" class="grey-text">Your message</label>
+            <textarea type="text" id="defaultFormContactMessageEx" class="form-control col-sm-10" rows="3"></textarea>
+
+          </form>
+
+          <!-- /test -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Enregistrer</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /setting modal -->
+
+  <!-- file upload modal -->
+  <div class="modal fade" id="upload-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Localisation:</label>
+              <input type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">Légende:</label>
+              <textarea class="form-control" id="message-text"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+          <button type="button" class="btn btn-primary">Publier</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ file upload modal -->
