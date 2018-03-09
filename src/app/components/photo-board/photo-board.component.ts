@@ -3,6 +3,7 @@ import { photos } from '../../models/photos';
 import { Comments } from '../../models/comments';
 
 import { PhotoBoardService } from '../../services/photo-board.service';
+import { AuthService } from '../../services/AuthService/auth.service';
 
 @Component({
   selector: 'app-photo-board',
@@ -11,6 +12,7 @@ import { PhotoBoardService } from '../../services/photo-board.service';
 })
 
 export class PhotoBoardComponent implements OnInit {
+  profile: any;
   photoboard: photos[];
   isCommented: boolean = false;
 
@@ -21,10 +23,20 @@ export class PhotoBoardComponent implements OnInit {
     comment: null,
   }
 
-  constructor(private photoBoardDataService: PhotoBoardService) { }
+  constructor(private photoBoardDataService: PhotoBoardService, private auth: AuthService) { }
 
   ngOnInit() {
-
+    /*
+        if (this.auth.userProfile) {
+          this.profile = this.auth.userProfile;
+          console.log(this.profile);
+        } else {
+          this.auth.getProfile((err, profile) => {
+            this.profile = profile;
+            console.log(this.profile);
+          });
+        }
+    */
     this.photoBoardDataService.getPhotoboard().subscribe(data => {
       this.photoboard = data;
     });
