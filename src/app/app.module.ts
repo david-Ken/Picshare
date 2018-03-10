@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -22,6 +22,8 @@ import { EditProfilComponent } from './components/edit-profil/edit-profil.compon
 
 import { AuthService } from './services/AuthService/auth.service';
 import { AuthGuard } from './AuthGuard/auth.guard';
+
+import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -52,6 +54,11 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA_vxIN9XaeR13gSvkkbACIzN2UaDfYcOs',
+      libraries: ["places"]
+    }),
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [PhotoBoardService, AuthService, AuthGuard],
