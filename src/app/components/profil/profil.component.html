@@ -63,7 +63,7 @@
         <i class="fa fa-cog"></i>
       </a>
 
-      <a class="pull-right btn btn-primary btn-circle btn-lg my-button-2" data-toggle="modal" data-target="#upload-modal">
+      <a class="pull-right btn btn-primary btn-circle btn-lg my-button-2" (click)="onLoadResizeMap()" data-toggle="modal" data-target="#upload-modal">
         <i class="fa fa-upload"></i>
       </a>
       <!-- /buttons -->
@@ -100,16 +100,6 @@
           <img src="../../../assets/photo-board-img/icon02.jpg" alt=" icon " class=" img-fluid img-thumbnail tn">
         </div>
       </div>
-    </div>
-
-    <div class="container hide-it">
-      <div class="form-group">
-        <input placeholder="{{'Ajouter un lieu'|translate}}" autocorrect="off" autocapitalize="off" spellcheck="off" type="text"
-          class="form-control" #search [formControl]="searchControl">
-      </div>
-      <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
-        <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
-      </agm-map>
     </div>
   </section>
   <!-- /gallery -->
@@ -218,32 +208,23 @@
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">{{'Choisir une photo'|translate}}</label>
               <!-- Drag and drop zone -->
-              <image-upload buttonCaption="Choisir une photo" dropBoxMessage="Ou Glisser votre image içi" clearButtonCaption="Effacer"
-                (change)="onUploadButton($event)" (uploadFinished)="onDragAndDrop($event)">
+              <image-upload buttonCaption="{{'Choisir une photo'|translate}}" dropBoxMessage="{{'Ou Glisser votre image içi'|translate}}"
+                clearButtonCaption="Effacer" (change)="onUploadButton($event)" (uploadFinished)="onDragAndDrop($event)">
               </image-upload>
               <!-- /Drag and drop zone -->
             </div>
-            <!-- map -->
-            <!--
-            <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Localisation</label>
-              <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control"
-                #search [formControl]="searchControl">
-            </div>
-            <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
-              <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
-            </agm-map>
-          -->
-            <div class="container">
+
+            <!-- Map Zone -->
+            <div class="container ">
               <div class="form-group">
                 <input placeholder="{{'Ajouter un lieu'|translate}}" autocorrect="off" autocapitalize="off" spellcheck="off" type="text"
                   class="form-control" #search [formControl]="searchControl">
               </div>
-              <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+              <agm-map #myMap [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
                 <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
               </agm-map>
             </div>
-            <!-- /map -->
+            <!-- /Map Zone  -->
             <div class="form-group">
               <label for="message-text" class="col-form-label">{{'Légende'|translate}}:</label>
               <textarea class="form-control" id="message-text"></textarea>
@@ -258,10 +239,3 @@
     </div>
   </div>
   <!--/ file upload modal -->
-  <script>
-    $('#upload-modal').on('shown', function () {
-      google.maps.event.trigger(map, 'resize');
-      map.setCenter(new google.maps.LatLng(42.7369792, -84.48386540000001));
-    });
-
-  </script>

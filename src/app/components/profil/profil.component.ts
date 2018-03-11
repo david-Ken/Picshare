@@ -28,7 +28,7 @@ export class ProfilComponent implements OnInit {
   @ViewChild("search")
   public searchElementRef: ElementRef;
 
-
+  @ViewChild('myMap') myMap: AgmMap;
 
   constructor(
     private mapsAPILoader: MapsAPILoader,
@@ -96,16 +96,16 @@ export class ProfilComponent implements OnInit {
 
   // if user use upload button
   onUploadButton(event) {
-    if (event.target.files[0] != undefined) {
-      this.selectedFile = event.target.files[0];
+    if (event.target.files[0]) {
+      this.selectedFile = <File>event.target.files[0];
       console.log(this.selectedFile);
     }
   }
 
   // if user use drag and drop
   onDragAndDrop(event) {
-    if (event.file != undefined) {
-      this.selectedFile = event.file;
+    if (event.file) {
+      this.selectedFile = <File>event.file;
       console.log(this.selectedFile);
     }
   }
@@ -116,6 +116,11 @@ export class ProfilComponent implements OnInit {
     this.http.post("url", head).subscribe(response => {
       console.log(response);
     });
+  }
+
+  onLoadResizeMap() {
+    this.myMap.triggerResize();
+    console.log("done done done");
   }
 
 }
