@@ -1,4 +1,11 @@
 <div class="container">
+
+  <!-- Drag and drop zone -->
+  <image-upload url="https://httpbin.org/status/200" buttonCaption="Choisir une photo" dropBoxMessage="Ou Glisser votre image içi"
+    clearButtonCaption="Effacer">
+  </image-upload>
+  <!-- /Drag and drop zone -->
+
   <div class="card mt-3 mb-3" *ngFor="let photo of photoboard">
     <!-- Header -->
     <div class="card-header">

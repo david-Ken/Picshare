@@ -1,8 +1,10 @@
 import { Component, OnInit, ElementRef, NgModule, NgZone, ViewChild } from '@angular/core';
-/* test */
+import { HttpClient } from '@angular/common/http';
+//maps modules imported
 import { AgmCoreModule, MapsAPILoader, AgmMap } from '@agm/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { } from '@types/googlemaps';
+
 
 
 @Component({
@@ -13,7 +15,10 @@ import { } from '@types/googlemaps';
 
 
 export class ProfilComponent implements OnInit {
+  // file upload
+  selectedFile = null;
 
+  //map values
   public latitude: number;
   public longitude: number;
   public searchControl: FormControl;
@@ -27,7 +32,8 @@ export class ProfilComponent implements OnInit {
 
   constructor(
     private mapsAPILoader: MapsAPILoader,
-    private ngZone: NgZone
+    private ngZone: NgZone,
+    private http: HttpClient
   ) { }
 
 
@@ -87,4 +93,29 @@ export class ProfilComponent implements OnInit {
       });
     }
   }
+
+  // if user use upload button
+  onUploadButton(event) {
+    if (event.target.files[0] != undefined) {
+      this.selectedFile = event.target.files[0];
+      console.log(this.selectedFile);
+    }
+  }
+
+  // if user use drag and drop
+  onDragAndDrop(event) {
+    if (event.file != undefined) {
+      this.selectedFile = event.file;
+      console.log(this.selectedFile);
+    }
+  }
+
+  onUploadFile() {
+    const head = new FormData();
+    head.append('image', this.selectedFile, this.selectedFile.name)
+    this.http.post("url", head).subscribe(response => {
+      console.log(response);
+    });
+  }
+
 }

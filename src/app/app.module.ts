@@ -24,6 +24,9 @@ import { AuthService } from './services/AuthService/auth.service';
 import { AuthGuard } from './AuthGuard/auth.guard';
 
 import { AgmCoreModule, MapsAPILoader } from '@agm/core';
+import { DropZoneDirective } from './drop-zone.directive';
+import { FileSizePipe } from './file-size.pipe';
+import { ImageUploadModule } from "angular2-image-upload";
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -40,13 +43,16 @@ export function HttpLoaderFactory(http: HttpClient) {
     SignupComponent,
     PhotoBoardComponent,
     ProfilComponent,
-    EditProfilComponent
+    EditProfilComponent,
+    DropZoneDirective,
+    FileSizePipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     MyDatePickerModule,
+    ImageUploadModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

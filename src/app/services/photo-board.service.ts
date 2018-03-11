@@ -5,6 +5,9 @@ import { of } from 'rxjs/observable/of'
 import { photos } from '../models/photos';
 import { Comments } from '../models/comments';
 
+import { HttpClient } from '@angular/common/http';
+
+
 @Injectable()
 export class PhotoBoardService {
   photoBoardData: photos[];
@@ -19,7 +22,7 @@ export class PhotoBoardService {
     comment: null,
   };
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.photoBoardData = [
       {
         id: 'photo1',
@@ -115,6 +118,13 @@ export class PhotoBoardService {
       }
     }
 
+  }
+
+
+  /* test http get request */
+  getAll(): Observable<any> {
+    return this.http.get('http://localhost:8080/user/all');
+    //return this.http.get('//localhost:8080/user/all');
   }
 
 }

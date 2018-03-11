@@ -217,7 +217,11 @@
           <form>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">{{'Choisir une photo'|translate}}</label>
-              <input type="text" class="form-control" id="recipient-name">
+              <!-- Drag and drop zone -->
+              <image-upload buttonCaption="Choisir une photo" dropBoxMessage="Ou Glisser votre image içi" clearButtonCaption="Effacer"
+                (change)="onUploadButton($event)" (uploadFinished)="onDragAndDrop($event)">
+              </image-upload>
+              <!-- /Drag and drop zone -->
             </div>
             <!-- map -->
             <!--
@@ -248,7 +252,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">{{'Annuler'| translate}}</button>
-          <button type="button" class="btn btn-primary">{{'Publier'|translate}}</button>
+          <button type="button" class="btn btn-primary" (click)="onUploadFile()">{{'Publier'|translate}}</button>
         </div>
       </div>
     </div>

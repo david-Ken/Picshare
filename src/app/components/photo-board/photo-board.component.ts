@@ -5,6 +5,7 @@ import { Comments } from '../../models/comments';
 import { PhotoBoardService } from '../../services/photo-board.service';
 import { AuthService } from '../../services/AuthService/auth.service';
 
+
 @Component({
   selector: 'app-photo-board',
   templateUrl: './photo-board.component.html',
@@ -63,5 +64,4 @@ export class PhotoBoardComponent implements OnInit {
   setColor(likedPhotoId) {
     this.photoBoardDataService.updateLike(likedPhotoId);
   }
-
 }
