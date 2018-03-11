@@ -1,4 +1,64 @@
 <div class="container">
+
+  <div class="card mt-3">
+    <div class="card-header">
+      Publier une photo
+    </div>
+    <div class="card-body">
+
+      <p>
+        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+          Publier une photo
+        </a>
+        <button (click)="onLoadResizeMap()" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMap"
+          aria-expanded="false" aria-controls="collapseExample">
+          Taguer la photo
+        </button>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".closeCollapse" aria-expanded="false" aria-controls="collapseExample">
+          Fermer
+        </button>
+      </p>
+
+      <div class="collapse closeCollapse mb-3" id="collapseExample">
+        <input placeholder="Ajouter un commentaire" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control">
+        <image-upload buttonCaption="{{'Choisir une photo'|translate}}" dropBoxMessage="{{'Ou Glisser votre image içi'|translate}}"
+          clearButtonCaption="Effacer" (change)="onUploadButton($event)" (uploadFinished)="onDragAndDrop($event)">
+        </image-upload>
+      </div>
+
+      <div class="collapse closeCollapse" id="collapseMap">
+        <div class="form-group mb-0">
+          <input placeholder="{{'Ajouter un lieu'|translate}}" autocorrect="off" autocapitalize="off" spellcheck="off" type="text"
+            class="form-control" #search [formControl]="searchControl">
+        </div>
+        <agm-map #map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+          <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+        </agm-map>
+      </div>
+
+      <!--- -->
+    </div>
+  </div>
+
+  <!-- <div class="row ml-5 mt-3">
+    <div class="col-md-9 ml-3">
+      <form>
+        <div class="form-group mb-0">
+          <input placeholder="Ajouter un commentaire" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control">
+        </div>
+        <div class="form-group"> -->
+  <!-- Drag and drop zone -->
+  <!--
+          <image-upload buttonCaption="{{'Choisir une photo'|translate}}" dropBoxMessage="{{'Ou Glisser votre image içi'|translate}}"
+            clearButtonCaption="Effacer" (change)="onUploadButton($event)" (uploadFinished)="onDragAndDrop($event)">
+          </image-upload> -->
+  <!-- /Drag and drop zone -->
+  <!--
+        </div>
+      </form>
+    </div>
+  </div>
+-->
   <div class="card mt-3 mb-3" *ngFor="let photo of photoboard">
     <!-- Header -->
     <div class="card-header">

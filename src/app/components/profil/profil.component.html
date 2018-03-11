@@ -14,7 +14,7 @@
               <span class="profil-text-sm">@Rebbecca255</span>
             </div>
             <div class="profil-text-sm">
-              <i class="fa fa-map-marker mr-3  "></i> South Africa</div>
+              <i class="fa fa-map-marker mr-3  "></i> {{'Afrique du Sud'|translate}}</div>
             <div class="profil-text-sm">Description :
               <span class="profil-text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem, culpa?</span>
             </div>
@@ -33,15 +33,15 @@
                 </li>
                 <li class="list-inline-item mr-5">
                   <div class="font-weight-bold text-center">100K</div>
-                  <div class="font-weight-bold">Amis</div>
+                  <div class="font-weight-bold">{{'Amis'|translate}}</div>
                 </li>
                 <li class="list-inline-item mr-5">
                   <div class="font-weight-bold text-center">300K</div>
-                  <div class="font-weight-bold">Abonnés</div>
+                  <div class="font-weight-bold">{{'Abonnés'|translate}}</div>
                 </li>
                 <li class="list-inline-item mr-5">
                   <div class="font-weight-bold text-center">5</div>
-                  <div class="font-weight-bold">Groupes</div>
+                  <div class="font-weight-bold">{{'Groupes'|translate}}</div>
                 </li>
               </ul>
             </div>
@@ -63,7 +63,7 @@
         <i class="fa fa-cog"></i>
       </a>
 
-      <a class="pull-right btn btn-primary btn-circle btn-lg my-button-2" data-toggle="modal" data-target="#upload-modal">
+      <a class="pull-right btn btn-primary btn-circle btn-lg my-button-2" (click)="onLoadResizeMap()" data-toggle="modal" data-target="#upload-modal">
         <i class="fa fa-upload"></i>
       </a>
       <!-- /buttons -->
@@ -105,66 +105,87 @@
   <!-- /gallery -->
 
   <!-- setting modal -->
-  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal fade bd-example-modal-lg setting-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Editer mon profil</h5>
+          <h5 class="modal-title">{{'Editer mon profil'|translate}}</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
           <!-- test -->
-
-          <form class="form-horizontal">
-
-            <div class="form-group">
-              <label class="control-label col-sm-2" for="email">Nom</label>
-              <div class="col-sm-10">
-                <input type="email" class="form-control" id="email" placeholder="Changer mon nom">
+          <div class="container">
+            <form>
+              <div class="form-group row">
+                <label for="lastname" class="col-sm-3 col-form-label">
+                  <i class="fa fa-user mr-2"></i> {{'Nom'|translate}}</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="lastname" placeholder="{{'Changer le nom'|translate}}">
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label class="control-label col-sm-2" for="email">Prenom</label>
-              <div class="col-sm-10">
-                <input type="email" class="form-control" id="email" placeholder="Changer mon prenom">
+              <div class="form-group row">
+                <label for="firstname" class="col-sm-3 col-form-label">
+                  <i class="fa fa-user-circle mr-2"></i>{{'Prenom'|translate}} </label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="firstname" placeholder="{{'Changer le prenom'|translate}}">
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label class="control-label col-sm-2" for="email">Pseudo</label>
-              <div class="col-sm-10">
-                <input type="email" class="form-control" id="email" placeholder="Changer mon pseudo">
+              <div class="form-group row">
+                <label for="pseudo" class="col-sm-3 col-form-label">
+                  <i class="fa fa-eye mr-2"></i>{{'Pseudo'|translate}} </label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="pseudo" placeholder="{{'Changer le pseudo'|translate}}">
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label class="control-label col-sm-2" for="pwd">Password</label>
-              <div class="col-sm-10">
-                <input type="password" class="form-control" id="pwd" placeholder="Changer mon mot de passe">
+              <div class="form-group row">
+                <label for="Password" class="col-sm-3 col-form-label">
+                  <i class="fa fa-venus-mars mr-2"></i>{{'Sexe'| translate}}</label>
+                <div class="col-sm-9">
+                  <select class="form-control">
+                    <option>{{'Homme'| translate}}</option>
+                    <option>{{'Femme'| translate}}</option>
+                  </select>
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label class="control-label col-sm-4" for="pwd">Confirmation mot de passe</label>
-              <div class="col-sm-10">
-                <input type="password" class="form-control" id="pwd" placeholder="Confirmer mon mot de passe">
+              <div class="form-group row">
+                <label for="Password" class="col-sm-3 col-form-label">
+                  <i class="fa fa-lock mr-2"></i>{{'Mot de passe' |translate}}</label>
+                <div class="col-sm-9">
+                  <input type="password" class="form-control" id="Password" placeholder="{{'Nouveau mot de passe' | translate}}">
+                </div>
               </div>
-            </div>
 
-            <!-- Default textarea message -->
-            <label for="defaultFormContactMessageEx" class="grey-text">Your message</label>
-            <textarea type="text" id="defaultFormContactMessageEx" class="form-control col-sm-10" rows="3"></textarea>
+              <div class="form-group row">
+                <label for="CfPassword" class="col-sm-3 col-form-label">
+                  <i class="fa fa-exclamation-triangle mr-2"></i>{{'Confirmation' | translate}} </label>
+                <div class="col-sm-9">
+                  <input type="password" class="form-control" id="CfPassword" placeholder="{{'Confirmer mot de passe' | translate}}">
+                </div>
+              </div>
 
-          </form>
+              <div class="form-group row">
+                <label for="biographie" class="col-sm-3 col-form-label">
+                  <i class="fa fa-address-card mr-2"></i>{{'Biographie'|translate}} </label>
+                <div class="col-sm-9">
+                  <textarea type="text" class="form-control" id="textarea" rows="3"></textarea>
+                </div>
+              </div>
 
+            </form>
+
+          </div>
           <!-- /test -->
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Enregistrer</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+          <button type="button" class="btn btn-primary">{{'Enregistrer'|translate}}</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">{{'Annuler'|translate}}</button>
         </div>
       </div>
     </div>
@@ -172,11 +193,12 @@
   <!-- /setting modal -->
 
   <!-- file upload modal -->
-  <div class="modal fade" id="upload-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal fade bd-example-modal-lg" id="upload-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">{{'Publier une photo'|translate}}</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -184,18 +206,34 @@
         <div class="modal-body">
           <form>
             <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Localisation:</label>
-              <input type="text" class="form-control" id="recipient-name">
+              <label for="recipient-name" class="col-form-label">{{'Choisir une photo'|translate}}</label>
+              <!-- Drag and drop zone -->
+              <image-upload buttonCaption="{{'Choisir une photo'|translate}}" dropBoxMessage="{{'Ou Glisser votre image içi'|translate}}"
+                clearButtonCaption="Effacer" (change)="onUploadButton($event)" (uploadFinished)="onDragAndDrop($event)">
+              </image-upload>
+              <!-- /Drag and drop zone -->
             </div>
+
+            <!-- Map Zone -->
+            <div class="container ">
+              <div class="form-group">
+                <input placeholder="{{'Ajouter un lieu'|translate}}" autocorrect="off" autocapitalize="off" spellcheck="off" type="text"
+                  class="form-control" #search [formControl]="searchControl">
+              </div>
+              <agm-map #myMap [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+                <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+              </agm-map>
+            </div>
+            <!-- /Map Zone  -->
             <div class="form-group">
-              <label for="message-text" class="col-form-label">Légende:</label>
+              <label for="message-text" class="col-form-label">{{'Légende'|translate}}:</label>
               <textarea class="form-control" id="message-text"></textarea>
             </div>
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-          <button type="button" class="btn btn-primary">Publier</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">{{'Annuler'| translate}}</button>
+          <button type="button" class="btn btn-primary" (click)="onUploadFile()">{{'Publier'|translate}}</button>
         </div>
       </div>
     </div>

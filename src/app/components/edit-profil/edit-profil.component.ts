@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { PhotoBoardService } from '../../services/photo-board.service';
 
 @Component({
   selector: 'app-edit-profil',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditProfilComponent implements OnInit {
 
-  constructor() { }
+  userReceveid: Array<any>;
 
-  ngOnInit() {
+  constructor(private photoBoardService: PhotoBoardService) { }
+
+  ngOnInit() {/*
+    this.photoBoardService.getAll().subscribe(data => {
+      this.userReceveid = data;
+      console.log(this.userReceveid);
+    })*/
   }
 
 }
