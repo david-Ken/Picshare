@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="card mt-3 mb-3">
+    <!-- Header -->
+    <div class="card-header">
+
+      <div class="row">
+        <div class="col-md-6  text-left">
+          <img src="../../../assets/photo-board-img/{{photo.profilPhoto}}" alt="icon" class=" img-fluid  rounded-circle  pull-left my-icon  mr-2">
+          <h5 class=" "> {{photo.firstName }} {{photo.lastName}}</h5>
+          <h5 class=" text-danger  ">{{photo.pseudo}}</h5>
+
+        </div>
+        <div class="col-md-6  text-right">
+          <h6 class="text-muted  "> en ligne il y {{photo.online}}</h6>
+          <h6 class=" text-danger ">{{photo.location}}
+            <i class="fa fa-map-marker"></i>
+          </h6>
+        </div>
+      </div>
+
+      <!-- Photo description -->
+      <div>{{photo.description}}</div>
+    </div>
+    <!-- /Photo description -->
+
+    <!-- /Header -->
+
+    <div class=" card-body p-0">
+
+
+      <img src="../../../assets/photo-board-img/{{photo.image}} " alt="userphoto" class="img-fluid p-0" data-toggle="lightbox">
+
+    </div>
+
+
+    <div class="card-footer text-muted ">
+
+      <div>
+        <span class="ml-2 mr-3">
+          <i class="fa fa-heart" [ngClass]="{'liked':photo.like && true}" (click)="setColor(photo.id)"></i> {{photo.likeNumber}}K
+        </span>
+        <span class="">
+          <i class="fa fa-comment"></i> {{photo.commentNumber}}
+        </span>
+        <span class=" mr-2 pull-right">
+          <i class="fa fa-share-alt"></i> {{photo.shareNumber}}
+        </span>
+      </div>
+
+      <!-- Comments  -->
+      <div *ngFor="let item of photo.comments">
+        <div class="ml-2">
+          <span class="font-weight-bold">{{item.firstName}} {{item.lastName}}</span>
+          <span>{{item.comment}}</span>
+        </div>
+      </div>
+      <!-- /Comments -->
+
+
+
+      <div *ngIf="isCommented">
+        <div class="ml-2">
+          <span class="font-weight-bold">{{currentComment.firstName}} {{currentComment.lastName}}</span>
+          <span>{{currentComment.comment}}</span>
+        </div>
+      </div>
+
+
+      <hr>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="{{'Ajouter un commentaire' | translate}} ..." [(ngModel)]="newComment.comment"
+          (keypress)="addComment($event,photo)" aria-label="Recipient's username" aria-describedby="basic-addon2">
+
+      </div>
+
+    </div>
+  </div>
+</div>

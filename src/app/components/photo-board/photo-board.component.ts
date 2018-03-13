@@ -83,7 +83,7 @@ export class PhotoBoardComponent implements OnInit {
           this.latitude = place.geometry.location.lat();
           this.longitude = place.geometry.location.lng();
           this.formatted_address = place.formatted_address;
-          //this.zoom = 12;
+          this.zoom = 15;
           console.log(this.formatted_address);
           console.log(this.latitude);
           console.log(this.longitude);

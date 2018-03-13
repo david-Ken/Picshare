@@ -24,8 +24,17 @@ hr {
   border-top: 1px solid white;
 }
 
-.profil-stat {
+.profil-stat,
+.profil-stat a {
   color: rgb(192, 192, 192);
+}
+
+.profil-stat li:hover,
+.profil-stat a:active,
+.profil-stat a:hover {
+  color: #007bff !important;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .gallery {
@@ -141,11 +150,3 @@ agm-map {
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
 }
-
-/*
-.setting-modal input {
-  border-top: 0px;
-  border-left: 0px;
-  border-right: 0px;
-}
-*/

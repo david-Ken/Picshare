@@ -27,21 +27,37 @@
             <div class="profil-stat">
               <hr class="my-bar">
               <ul class="list-inline">
-                <li class="list-inline-item mr-5">
-                  <div class="font-weight-bold text-center">39</div>
-                  <div class="font-weight-bold">Photos</div>
+                <li class="list-inline-item mr-5" data-toggle="collapse" data-target="#collapsePhotos" aria-expanded="false" aria-controls="collapsePhotos">
+
+                  <a class="">
+                    <div class="font-weight-bold text-center">39</div>
+                    <div class="font-weight-bold">Photos</div>
+                  </a>
+
                 </li>
-                <li class="list-inline-item mr-5">
-                  <div class="font-weight-bold text-center">100K</div>
-                  <div class="font-weight-bold">{{'Amis'|translate}}</div>
+                <li class="list-inline-item mr-5" data-toggle="collapse" data-target="#collapseFriends" aria-expanded="false" aria-controls="collapseFriends">
+
+                  <a class="">
+                    <div class="font-weight-bold text-center">100K</div>
+                    <div class="font-weight-bold">{{'Amis'|translate}}</div>
+                  </a>
+
                 </li>
-                <li class="list-inline-item mr-5">
-                  <div class="font-weight-bold text-center">300K</div>
-                  <div class="font-weight-bold">{{'Abonnés'|translate}}</div>
+                <li class="list-inline-item mr-5" data-toggle="collapse" data-target="#collapseFollowers" aria-expanded="false" aria-controls="collapseFollowers">
+
+                  <a class="">
+                    <div class="font-weight-bold text-center">300K</div>
+                    <div class="font-weight-bold">{{'Abonnés'|translate}}</div>
+                  </a>
+
                 </li>
-                <li class="list-inline-item mr-5">
-                  <div class="font-weight-bold text-center">5</div>
-                  <div class="font-weight-bold">{{'Groupes'|translate}}</div>
+                <li class="list-inline-item mr-5" data-toggle="collapse" data-target="#collapseGroups" aria-expanded="false" aria-controls="collapseGroups">
+
+                  <a class="">
+                    <div class="font-weight-bold text-center">5</div>
+                    <div class="font-weight-bold">{{'Groupes'|translate}}</div>
+                  </a>
+
                 </li>
               </ul>
             </div>
@@ -59,7 +75,8 @@
   <section>
     <div class=" gallery ml-5 mr-5">
       <!-- buttons -->
-      <a class="pull-right btn btn-secondary btn-circle btn-lg btn-lg-" data-toggle="modal" data-target=".bd-example-modal-lg">
+      <!-- modal button -->
+      <a class="pull-right btn btn-secondary btn-circle btn-lg" data-toggle="modal" data-target=".bd-example-modal-lg">
         <i class="fa fa-cog"></i>
       </a>
 
@@ -68,6 +85,28 @@
       </a>
       <!-- /buttons -->
 
+      <!-- big test hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-->
+      <div class="collapse  " id="collapseGroups">
+        <div class="card card-body">
+          collapseGroups collapseGroups collapseGroups
+        </div>
+      </div>
+      <div class="collapse " id="collapseFriends">
+        <div class="card card-body">
+          collapseFriends collapseFriends collapseFriends
+        </div>
+      </div>
+      <div class="collapse " id="collapseFollowers">
+        <div class="card card-body">
+          collapseFollowers collapseFollowers collapseFollowers
+        </div>
+      </div>
+      <div class="collapse  " id="collapsePhotos">
+        <div class="card card-body">
+          collapsePhotos collapsePhotos collapsePhotos
+        </div>
+      </div>
+      <!-- big test hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-->
 
       <div class="row ml-5 mr-5">
         <div class="col-md-3">

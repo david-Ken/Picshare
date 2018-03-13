@@ -26,6 +26,7 @@ export class PhotoBoardService {
     this.photoBoardData = [
       {
         id: 'photo1',
+        numTest: 1,
         firstName: 'Jessica',
         lastName: 'Jones',
         pseudo: '@JessJones',
@@ -46,6 +47,7 @@ export class PhotoBoardService {
       },
       {
         id: 'photo2',
+        numTest: 2,
         firstName: 'Axelle',
         lastName: 'Sheeran',
         pseudo: '@blueDream',
@@ -66,6 +68,7 @@ export class PhotoBoardService {
       },
       {
         id: 'photo3',
+        numTest: 3,
         firstName: 'Rita',
         lastName: 'Ora',
         pseudo: '@Pristina',
@@ -120,6 +123,16 @@ export class PhotoBoardService {
 
   }
 
+  // get sigle photo id
+  /* getPhotoByID(id: number){
+     return this.photoBoardData.slice(0).find(photo => photo.id === id);
+   }
+ */
+
+  //remove when server will be ready
+  getPhotoByID(id: number) {
+    return this.photoBoardData.slice(0).find(photo => photo.numTest == id);
+  }
 
   /* test http get request */
   getAll(): Observable<any> {
