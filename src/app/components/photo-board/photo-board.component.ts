@@ -49,8 +49,8 @@ export class PhotoBoardComponent implements OnInit {
   ngOnInit() {
 
 
-    /*********************************      Map  **************************************** */
-    //set google maps defaults
+
+    //google maps setup
 
     this.zoom = 14;
     this.latitude = 45.777222;

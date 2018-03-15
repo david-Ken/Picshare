@@ -11,6 +11,7 @@ import { PhotoComponent } from './components/photo/photo.component';
 
 import { AuthGuard } from './AuthGuard/auth.guard';
 
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'signup', component: SignupComponent },
@@ -21,11 +22,10 @@ const routes: Routes = [
   { path: '**', component: NotFoundComponent }
 ];
 
-
 @NgModule({
   exports: [RouterModule],
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
   ],
   declarations: []
 })

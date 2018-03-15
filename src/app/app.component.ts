@@ -3,6 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 import { AuthService } from './services/AuthService/auth.service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
