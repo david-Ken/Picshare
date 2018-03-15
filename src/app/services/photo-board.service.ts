@@ -6,14 +6,22 @@ import { photos } from '../models/photos';
 import { Comments } from '../models/comments';
 
 import { HttpClient } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
 
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'/*,
+    'Authorization': 'my-auth-token'*/
+  })
+};
 
 @Injectable()
 export class PhotoBoardService {
   photoBoardData: photos[];
   commentedPhoto: photos;
-
+  connectionInfo: any;
   data: Observable<any>;
+
 
   comments: Comments = {
     id: 'xx',
@@ -26,6 +34,7 @@ export class PhotoBoardService {
     this.photoBoardData = [
       {
         id: 'photo1',
+        numTest: 1,
         firstName: 'Jessica',
         lastName: 'Jones',
         pseudo: '@JessJones',
@@ -46,6 +55,7 @@ export class PhotoBoardService {
       },
       {
         id: 'photo2',
+        numTest: 2,
         firstName: 'Axelle',
         lastName: 'Sheeran',
         pseudo: '@blueDream',
@@ -66,6 +76,7 @@ export class PhotoBoardService {
       },
       {
         id: 'photo3',
+        numTest: 3,
         firstName: 'Rita',
         lastName: 'Ora',
         pseudo: '@Pristina',
@@ -120,11 +131,23 @@ export class PhotoBoardService {
 
   }
 
+  // get sigle photo id
+  /* getPhotoByID(id: number){
+     return this.photoBoardData.slice(0).find(photo => photo.id === id);
+   }
+ */
 
-  /* test http get request */
-  getAll(): Observable<any> {
-    return this.http.get('http://localhost:8080/user/all');
-    //return this.http.get('//localhost:8080/user/all');
+  //remove when server will be ready
+  getPhotoByID(id: number) {
+    return this.photoBoardData.slice(0).find(photo => photo.numTest == id);
   }
 
+  // test http get request 
+  getAll(): Observable<any> {
+    return this.http.get('http://localhost:8080/user/all');
+  }
+
+  connection(connectionInfo): Observable<any> {
+    return this.http.post('http://localhost:8080/login', connectionInfo, httpOptions);
+  }
 }

@@ -25,6 +25,10 @@ import { AuthGuard } from './AuthGuard/auth.guard';
 
 import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 import { ImageUploadModule } from "angular2-image-upload";
+import { PhotoComponent } from './components/photo/photo.component';
+import { ConnectionService } from './services/connection.service';
+
+
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -41,7 +45,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     SignupComponent,
     PhotoBoardComponent,
     ProfilComponent,
-    EditProfilComponent
+    EditProfilComponent,
+    PhotoComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +68,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [PhotoBoardService, AuthService, AuthGuard],
+  providers: [PhotoBoardService, AuthService, AuthGuard, ConnectionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

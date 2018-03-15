@@ -27,21 +27,37 @@
             <div class="profil-stat">
               <hr class="my-bar">
               <ul class="list-inline">
-                <li class="list-inline-item mr-5">
-                  <div class="font-weight-bold text-center">39</div>
-                  <div class="font-weight-bold">Photos</div>
+                <li class="list-inline-item mr-5" data-toggle="collapse" data-target="#collapsePhotos" aria-expanded="false" aria-controls="collapsePhotos">
+
+                  <a class="">
+                    <div class="font-weight-bold text-center">39</div>
+                    <div class="font-weight-bold">Photos</div>
+                  </a>
+
                 </li>
-                <li class="list-inline-item mr-5">
-                  <div class="font-weight-bold text-center">100K</div>
-                  <div class="font-weight-bold">{{'Amis'|translate}}</div>
+                <li class="list-inline-item mr-5" data-toggle="collapse" data-target="#collapseFriends" aria-expanded="false" aria-controls="collapseFriends">
+
+                  <a class="">
+                    <div class="font-weight-bold text-center">100K</div>
+                    <div class="font-weight-bold">{{'Amis'|translate}}</div>
+                  </a>
+
                 </li>
-                <li class="list-inline-item mr-5">
-                  <div class="font-weight-bold text-center">300K</div>
-                  <div class="font-weight-bold">{{'Abonnés'|translate}}</div>
+                <li class="list-inline-item mr-5" data-toggle="collapse" data-target="#collapseFollowers" aria-expanded="false" aria-controls="collapseFollowers">
+
+                  <a class="">
+                    <div class="font-weight-bold text-center">300K</div>
+                    <div class="font-weight-bold">{{'Abonnés'|translate}}</div>
+                  </a>
+
                 </li>
-                <li class="list-inline-item mr-5">
-                  <div class="font-weight-bold text-center">5</div>
-                  <div class="font-weight-bold">{{'Groupes'|translate}}</div>
+                <li class="list-inline-item mr-5" data-toggle="collapse" data-target="#collapseGroups" aria-expanded="false" aria-controls="collapseGroups">
+
+                  <a class="">
+                    <div class="font-weight-bold text-center">5</div>
+                    <div class="font-weight-bold">{{'Groupes'|translate}}</div>
+                  </a>
+
                 </li>
               </ul>
             </div>
@@ -59,7 +75,8 @@
   <section>
     <div class=" gallery ml-5 mr-5">
       <!-- buttons -->
-      <a class="pull-right btn btn-secondary btn-circle btn-lg btn-lg-" data-toggle="modal" data-target=".bd-example-modal-lg">
+      <!-- modal button -->
+      <a class="pull-right btn btn-secondary btn-circle btn-lg" data-toggle="modal" data-target=".bd-example-modal-lg">
         <i class="fa fa-cog"></i>
       </a>
 
@@ -68,41 +85,162 @@
       </a>
       <!-- /buttons -->
 
+      <!-- accordion -->
+      <div id="accordion">
+        <div class="collapse show " id="collapseGroups" data-parent="#accordion">
+          <div class="row m-5">
+            <div class="col-md-3">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../../assets/pexels-photo-185933.png" alt="Card image cap">
+                <!--
+                <div>
+                  <button class="btn btn-circle btn-lg ">
+                    <i class="fa fa-users"></i>
+                  </button>
+                </div>
 
-      <div class="row ml-5 mr-5">
-        <div class="col-md-3">
-          <img src="../../../assets/photo-board-img/img02.jpg" alt="icon" class="img-fluid img-thumbnail tn">
+              -->
+                <div class="card-body">
+                  <h5 class="card-title">Clermonteck</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Rejoindre</a>
+                  <a href="#" class="btn btn-danger">Quitter</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../../assets/profile/01.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">BMKD</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Rejoindre</a>
+                  <a href="#" class="btn btn-danger">Quitter</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../../assets/photo-board-img/img02.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Project M1</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Rejoindre</a>
+                  <a href="#" class="btn btn-danger">Quitter</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../../assets/photo-board-img/img.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Team Master</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Rejoindre</a>
+                  <a href="#" class="btn btn-danger">Quitter</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row ml-5 mr-5 mb-5 mt-0">
+            <div class="col-md-3">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../../assets/photo-board-img/img01.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">LavaJug</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Rejoindre</a>
+                  <a href="#" class="btn btn-danger">Quitter</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../../assets/photo-board-img/icon01.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">API Hour</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Rejoindre</a>
+                  <a href="#" class="btn btn-danger">Quitter</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../../assets/profile/02.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">United KingDom</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Rejoindre</a>
+                  <a href="#" class="btn btn-danger">Quitter</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../../assets/profile/03.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Barcelona</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Rejoindre</a>
+                  <a href="#" class="btn btn-danger">Quitter</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-md-3">
-          <img src="../../../assets/photo-board-img/img.jpg" alt="icon" class=" img-fluid img-thumbnail tn">
+        <div class="collapse " id="collapseFriends" data-parent="#accordion">
+          <div class="card card-body">
+            collapseFriends collapseFriends collapseFriends
+          </div>
         </div>
-        <div class="col-md-3">
-          <img src="../../../assets/photo-board-img/img01.jpg" alt=" icon " class=" img-fluid img-thumbnail tn">
+        <div class="collapse " id="collapseFollowers" data-parent="#accordion">
+          <div class="card card-body">
+            collapseFollowers collapseFollowers collapseFollowers
+          </div>
         </div>
-        <div class="col-md-3">
-          <img src="../../../assets/photo-board-img/icon01.jpg" alt=" icon " class=" img-fluid img-thumbnail tn">
+        <div class="collapse  " id="collapsePhotos" data-parent="#accordion">
+          <div class="card card-body">
+            <div class="row ml-5 mr-5">
+              <div class="col-md-3">
+                <img src="../../../assets/photo-board-img/img02.jpg" alt="icon" class="img-fluid img-thumbnail tn">
+              </div>
+              <div class="col-md-3">
+                <img src="../../../assets/photo-board-img/img.jpg" alt="icon" class=" img-fluid img-thumbnail tn">
+              </div>
+              <div class="col-md-3">
+                <img src="../../../assets/photo-board-img/img01.jpg" alt=" icon " class=" img-fluid img-thumbnail tn">
+              </div>
+              <div class="col-md-3">
+                <img src="../../../assets/photo-board-img/icon01.jpg" alt=" icon " class=" img-fluid img-thumbnail tn">
+              </div>
+            </div>
+
+
+
+            <div class="row ml-5 mr-5">
+              <div class="col-md-3">
+                <img src="../../../assets/profile/01.jpg" alt="icon" class=" img-fluid img-thumbnail tn ">
+              </div>
+              <div class="col-md-3">
+                <img src="../../../assets/profile/02.jpg" alt="icon" class=" img-fluid img-thumbnail tn">
+              </div>
+              <div class="col-md-3">
+                <img src="../../../assets/profile/03.jpg" alt=" icon " class=" img-fluid img-thumbnail tn">
+              </div>
+              <div class="col-md-3">
+                <img src="../../../assets/photo-board-img/icon02.jpg" alt=" icon " class=" img-fluid img-thumbnail tn">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-
-
-      <div class="row ml-5 mr-5">
-        <div class="col-md-3">
-          <img src="../../../assets/profile/01.jpg" alt="icon" class=" img-fluid img-thumbnail tn ">
-        </div>
-        <div class="col-md-3">
-          <img src="../../../assets/profile/02.jpg" alt="icon" class=" img-fluid img-thumbnail tn">
-        </div>
-        <div class="col-md-3">
-          <img src="../../../assets/profile/03.jpg" alt=" icon " class=" img-fluid img-thumbnail tn">
-        </div>
-        <div class="col-md-3">
-          <img src="../../../assets/photo-board-img/icon02.jpg" alt=" icon " class=" img-fluid img-thumbnail tn">
-        </div>
-      </div>
     </div>
   </section>
+  <!-- / accordion -->
   <!-- /gallery -->
+
 
   <!-- setting modal -->
   <div class="modal fade bd-example-modal-lg setting-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"

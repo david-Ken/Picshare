@@ -2,6 +2,7 @@ import { Comments } from "./comments";
 
 export interface photos {
     id: string,
+    numTest: number,
     firstName: string,
     lastName: string,
     pseudo: string,
