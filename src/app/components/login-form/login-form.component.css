@@ -3,15 +3,114 @@
   color: white;
 }
 
-/* google plus */
-
 .fa-google-custom {
   background: #DD4B39;
   color: white;
 }
 
 .card {
-  border: solid 5px #fff;
+  border: solid 1px #000;
   border-radius: 5px;
-  box-shadow: 6px 4px 10px #000000;
+  box-shadow: 1px 1px 30px #000000;
+}
+
+.fa-style {
+  color: #00e8d6;
+  background: #fff;
+  padding: 4px;
+  border-radius: 5px;
+  font-size: 30px;
+}
+
+body {
+  color: #fff;
+}
+
+.my-avatar {
+  width: 152px;
+  height: 152px;
+  background-color: skyblue;
+  border-radius: 100%;
+  padding-top: 10px;
+  margin-top: -50px;
+}
+
+#home-section {
+  background: url("../../../assets/homeBackground/home.jpg") no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  /* min-height: 760px;*/
+  height: 100vh;
+}
+
+#home-section .dark-overlay {
+  background: skyblue;
+  background: -webkit-linear-gradient(to right, rgba(38, 200, 230, 0.6), rgba(68, 87, 122, 1));
+  background: linear-gradient(to right, rgba(38, 200, 230, 0.6), rgba(68, 87, 122, 1));
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* min-height: 700px;*/
+  height: 100vh;
+}
+
+#home-section .home-inner {
+  padding-top: 3%;
+}
+
+#home-section .card-form {
+  opacity: 0.8;
+}
+
+/* enable absolute positioning */
+
+.inner-addon {
+  position: relative;
+}
+
+/* style icon */
+
+.inner-addon .fa {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+  color: red;
+}
+
+/* align icon */
+
+.left-addon .fa {
+  left: 0px;
+}
+
+/* add padding  */
+
+.left-addon input {
+  padding-left: 30px;
+}
+
+input,
+button {
+  border-radius: 50px;
+}
+
+.card {
+  background: -webkit-linear-gradient(to right, rgba(38, 200, 230, 0.6), rgba(68, 87, 122, 1));
+  background: linear-gradient(to right, rgba(38, 200, 230, 0.6), rgba(68, 87, 122, 1));
+}
+
+hr {
+  color: #fff;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.language-btn {
+  position: fixed;
+  bottom: 0;
+}
+
+.error-color {
+  color: #8B0000;
 }

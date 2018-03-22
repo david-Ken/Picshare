@@ -1,36 +1,36 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-primary">
-  <div class="container">
-    <a routerLink="/" class="navbar-brand">Photo-App</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain">
-      <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-expand-md navbar-dark bg-primary" *ngIf="auth.isAuthenticated()">
+  <div class=" container ">
+    <a routerLink="/ " class="navbar-brand ">Photo-App</a>
+    <button class="navbar-toggler " type="button " data-toggle="collapse " data-target="#navbarMain ">
+      <span class="navbar-toggler-icon "></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarMain">
+    <div class="collapse navbar-collapse " id="navbarMain ">
 
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a routerLink="signup" class="nav-link">{{'S\'inscrire' | translate}}</a>
+      <ul class="navbar-nav ml-auto ">
+        <li class="nav-item ">
+          <a routerLink="signup " class="nav-link ">{{'S\'inscrire' | translate}}</a>
         </li>
-        <li class="nav-item">
-          <a href="#" *ngIf="!auth.isAuthenticated()" class="nav-link">{{'Se connecter'| translate}}</a>
+        <li class="nav-item ">
+          <a href="# " *ngIf="!auth.isAuthenticated() " class="nav-link ">{{'Se connecter'| translate}}</a>
         </li>
-        <li class="nav-item">
-          <a href="#" *ngIf="auth.isAuthenticated()" (click)="auth.logout()" class="nav-link">{{'Se Déconnecter'| translate}}</a>
+        <li class="nav-item ">
+          <a href="# " *ngIf="auth.isAuthenticated() " (click)="auth.logout() " class="nav-link ">{{'Se Déconnecter'| translate}}</a>
         </li>
       </ul>
 
 
-      <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">
-          <i class="fa fa-cog"></i>
+      <div class="dropdown ">
+        <button class="btn btn-primary dropdown-toggle " type="button " id="dropdownMenuButton " data-toggle="dropdown
+  " aria-haspopup="true " aria-expanded="false ">
+          <i class="fa fa-cog "></i>
         </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a (click)="switchLanguage('en')" class="dropdown-item">
-            <img src="../../../assets/flags/en.png" class="lang-icon" alt=""> en
+        <div class="dropdown-menu " aria-labelledby="dropdownMenuButton ">
+          <a (click)="switchLanguage( 'en') " class="dropdown-item ">
+            <img src="../../../assets/flags/en.png " class="lang-icon " alt=" "> en
           </a>
 
-          <a (click)="switchLanguage('fr')" class="dropdown-item">
-            <img src="../../../assets/flags/fr.png" alt=""> fr
+          <a (click)="switchLanguage( 'fr') " class="dropdown-item ">
+            <img src="../../../assets/flags/fr.png " alt=" "> fr
           </a>
         </div>
       </div>

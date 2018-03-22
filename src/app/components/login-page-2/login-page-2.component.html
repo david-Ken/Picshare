@@ -1,0 +1,208 @@
+<body id="home">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <!--
+    <div class="container">
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a href="index.html" class="navbar-brand">LoopLAB</a>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="#home" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#explore-head-section" class="nav-link">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a href="#create-head-section" class="nav-link">Create</a>
+          </li>
+          <li class="nav-item">
+            <a href="#share-head-section" class="nav-link">Share</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  -->
+    <div class=" container ">
+      <a routerLink="/ " class="navbar-brand ">Photo-App</a>
+      <button class="navbar-toggler " type="button " data-toggle="collapse " data-target="#navbarMain ">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarMain ">
+
+        <ul class="navbar-nav ml-auto ">
+          <li class="nav-item ">
+            <a routerLink="signup " class="nav-link ">{{'S\'inscrire' | translate}}</a>
+          </li>
+          <li class="nav-item ">
+            <a href="# " *ngIf="!auth.isAuthenticated() " class="nav-link ">{{'Se connecter'| translate}}</a>
+          </li>
+          <li class="nav-item ">
+            <a href="# " *ngIf="auth.isAuthenticated() " (click)="auth.logout() " class="nav-link ">{{'Se Déconnecter'| translate}}</a>
+          </li>
+          <li class="nav-item ">
+            <a (click)="switchLanguage( 'en') " class="dropdown-item ">
+              <img src="../../../assets/flags/en.png " class="lang-icon " alt=" "> en
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a (click)="switchLanguage( 'fr') " class="dropdown-item ">
+              <img src="../../../assets/flags/fr.png " alt=" "> fr
+            </a>
+          </li>
+        </ul>
+
+        <!--
+        <div class="dropdown ">
+          <button class="btn btn-primary dropdown-toggle " type="button " id="dropdownMenuButton " data-toggle="dropdown
+    " aria-haspopup="true " aria-expanded="false ">
+            <i class="fa fa-cog "></i>
+          </button>
+          <div class="dropdown-menu " aria-labelledby="dropdownMenuButton ">
+            <a (click)="switchLanguage( 'en') " class="dropdown-item ">
+              <img src="../../../assets/flags/en.png " class="lang-icon " alt=" "> en
+            </a>
+
+            <a (click)="switchLanguage( 'fr') " class="dropdown-item ">
+              <img src="../../../assets/flags/fr.png " alt=" "> fr
+            </a>
+          </div>
+        </div>
+      -->
+      </div>
+    </div>
+  </nav>
+
+  <!-- HOME SECTION -->
+  <header id="home-section">
+    <div class="dark-overlay">
+      <div class="home-inner">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 d-none d-lg-block">
+              <h1 class="display-4">Build
+                <strong>social profiles</strong> and gain sucess and
+                <strong>profits</strong>
+              </h1>
+              <div class="d-flex flex-row">
+                <div class="p-4 align-self-start">
+                  <i class="fa fa-check fa-style"></i>
+                </div>
+                <div class="p-4 align-self-end">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, architecto, quaerat. Quis cum eius itaque ipsa magni
+                  quam, illo molestias
+                </div>
+              </div>
+
+              <div class="d-flex flex-row">
+                <div class="p-4 align-self-start">
+                  <i class="fa fa-check fa-style"></i>
+                </div>
+                <div class="p-4 align-self-end">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, architecto, quaerat. Quis cum eius itaque ipsa magni
+                  quam, illo molestias
+                </div>
+              </div>
+
+              <div class="d-flex flex-row">
+                <div class="p-4 align-self-start">
+                  <i class="fa fa-check fa-style"></i>
+                </div>
+                <div class="p-4 align-self-end">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, architecto, quaerat. Quis cum eius itaque ipsa magni
+                  quam, illo molestias
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="card bg-primary text-center card-form">
+                <div class="card-body">
+                  <!-------------------------------------- re  ------------------------------>
+
+
+                  <h3 class="text-center">{{'Se connecter' | translate }}</h3>
+                  <!-- test -->
+                  <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+                    <!-- test -->
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">
+                          <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                      </div>
+                      <!--[(ngModel)]="user.email"   name="email"-->
+                      <!-- test -->
+                      <input type="email" placeholder="Email" [(ngModel)]="user.username" [ngClass]="{'is-invalid':userEmail.errors && userEmail.touched}"
+                        class="form-control" name="username" #userEmail="ngModel" required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                        aria-label="Email" aria-describedby="basic-addon1">
+
+                      <div [hidden]="!userEmail.errors?.required" class="invalid-feedback">
+                        {{'L\' email est obligatoire'| translate}}
+                      </div>
+
+                      <div [hidden]="!userEmail.errors?.pattern" class="invalid-feedback">
+                        {{'L\'email n\'est pas valide'| translate }}
+                      </div>
+                    </div>
+                    <!-- test -->
+
+
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">
+                          <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                        </span>
+                      </div>
+                      <!--input type="password" class="form-control" placeholder="{{'Mot de passe' | translate}}" aria-label="Password" aria-describedby="basic-addon1"-->
+                      <!-- test -->
+                      <input type="password" placeholder="{{'Mot de passe' | translate}}" [(ngModel)]="user.password" [ngClass]="{'is-invalid':userPassword.errors && userPassword.touched}"
+                        class="form-control" name="password" #userPassword="ngModel" required pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
+                        aria-label="Password" aria-describedby="basic-addon1">
+                      <div [hidden]="!userPassword.errors?.required" class="invalid-feedback">
+                        {{'Le mot de passe est obligatoire' | translate }}
+                      </div>
+
+                      <div [hidden]="!userPassword.errors?.pattern" class="invalid-feedback">
+                        {{'Le mot de passe doit contenit au moins une majuscule, une minuscule , un chiffre et un caractère spéciale' | translate
+                        }}
+                      </div>
+                      <!-- test -->
+                    </div>
+
+                    <div class="form-check mb-3">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">{{'Se souvenir de moi'| translate }}</label>
+                    </div>
+
+                    <!--button type="submit" class="btn btn-primary btn-block">{{'Se Connecter' | translate}}</button-->
+                    <button [disabled]="!loginForm.form.valid" class="btn btn-block mb-3" [ngClass]="{'btn-primary': loginForm.form.valid }">{{'Se Connecter' | translate}}</button>
+                  </form>
+                  <a routerLink="signup" class="text-center mt-3">{{'Creer un compte' | translate }}</a>
+                  <a href="#" class="text-center mb-3">{{'Ou' | translate}} {{'Se connecter' | translate}} {{'avec' | translate}}</a>
+
+
+                  <div>
+                    <span>
+                      <button type="button" (click)="auth.login()" class="btn btn-block fa-facebook-custom mb-1">
+                        <i class="fa fa-facebook "></i> Facebook</button>
+                    </span>
+
+                    <span>
+                      <button type="button" class="btn btn-block  fa-google-custom ">
+                        <i class="fa fa-google-plus"></i> Google +</button>
+                    </span>
+                  </div>
+
+                  <!-------------------------------------- re ------------------------------->
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+</body>

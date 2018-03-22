@@ -1,98 +1,140 @@
-<div class="row">
+<body id="home">
 
-  <!-- BERTRAND LOGO
-  <div class="col-md-4">
-    <img src="../../../assets/logo.jpg" alt="">
-  </div>
+
+  <!--
+ 
+         
+            <a (click)="switchLanguage( 'en') " class="dropdown-item ">
+              <img src="../../../assets/flags/en.png " class="lang-icon " alt=" "> en
+            </a>
+          
+            <a (click)="switchLanguage( 'fr') " class="dropdown-item ">
+              <img src="../../../assets/flags/fr.png " alt=" "> fr
+            </a>
+          
+        
+
+
+      
+          -->
+
+
+  <!-- HOME SECTION -->
+  <header id="home-section">
+    <div class="dark-overlay">
+      <div class="home-inner">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-lg-5 m-auto">
+              <div class="card card-form text-center p-4">
+                <div id="avatar-radius">
+                  <img class="my-avatar img-rounded" src="../../../assets/homeBackground/avatar.png" alt="Card image cap">
+                </div>
+
+                <div class="card-body">
+                  <!-------------------------------------- re  ------------------------------>
+
+
+                  <h3 class="text-center">{{'Se connecter' | translate }}</h3>
+
+                  <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="text-left">
+
+
+                    <label for="Username" class="text-white ">Username</label>
+                    <div class="mb-3 inner-addon left-addon">
+                      <i class="fa fa-envelope" aria-hidden="true"></i>
+
+                      <!--[(ngModel)]="user.email"   name="email"-->
+
+                      <input type="email" placeholder="Email" [(ngModel)]="user.username" [ngClass]="{'is-invalid':userEmail.errors && userEmail.touched}"
+                        class="form-control" name="username" #userEmail="ngModel" required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                        aria-label="Email" aria-describedby="basic-addon1">
+
+                      <div [hidden]="!userEmail.errors?.required" class="invalid-feedback font-weight-bold error-color">
+                        {{'L\' email est obligatoire'| translate}}
+                      </div>
+
+                      <div [hidden]="!userEmail.errors?.pattern" class="invalid-feedback font-weight-bold error-color">
+                        {{'L\'email n\'est pas valide'| translate }}
+                      </div>
+                    </div>
+                    <!-- test -->
+
+
+                    <label for="Password" class="text-white">Password</label>
+                    <div class="mb-3 inner-addon left-addon">
+                      <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+
+                      <!--input type="password" class="form-control" placeholder="{{'Mot de passe' | translate}}" aria-label="Password" aria-describedby="basic-addon1"-->
+                      <!-- test -->
+                      <input type="password" placeholder="{{'Mot de passe' | translate}}" [(ngModel)]="user.password" [ngClass]="{'is-invalid':userPassword.errors && userPassword.touched}"
+                        class="form-control" name="password" #userPassword="ngModel" required pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
+                        aria-label="Password" aria-describedby="basic-addon1">
+                      <div [hidden]="!userPassword.errors?.required" class="invalid-feedback font-weight-bold error-color">
+                        {{'Le mot de passe est obligatoire' | translate }}
+                      </div>
+
+                      <div [hidden]="!userPassword.errors?.pattern" class="invalid-feedback font-weight-bold error-color">
+                        {{'Le mot de passe doit contenit au moins une majuscule, une minuscule , un chiffre et un caractère spéciale' | translate
+                        }}
+                      </div>
+                      <!-- test -->
+                    </div>
+
+                    <div class="form-check mb-3">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">{{'Se souvenir de moi'| translate }}</label>
+                    </div>
+
+                    <!--button type="submit" class="btn btn-primary btn-block">{{'Se Connecter' | translate}}</button-->
+                    <button [disabled]="!loginForm.form.valid" class="btn btn-block mb-3" [ngClass]="{'btn-primary': loginForm.form.valid }">{{'Se Connecter' | translate}}</button>
+                  </form>
+
+                  <a href="#" class="text-center text-white">{{'Ou' | translate}}</a>
+
+
+                  <div class="text-white mt-3">
+                    <span>
+                      <button type="button" (click)="auth.login()" class="btn btn-block fa-google-custom mb-1">
+                        Connection via les reseaux sociaux</button>
+                    </span>
+                    <hr class="mx-5 mt-5">
+
+                    <a routerLink="signup" class="text-center text-white text-bold">{{'Creer un compte' | translate }}</a>
+                    <!--
+                    <span>
+                      <button type="button" (click)="auth.login()" class="btn btn-block fa-facebook-custom mb-1">
+                        <i class="fa fa-facebook "></i> Facebook</button>
+                    </span>
+
+                    <span>
+                      <button type="button" class="btn btn-block  fa-google-custom ">
+                        <i class="fa fa-google-plus"></i> Google +</button>
+                    </span>
+                  -->
+                  </div>
+
+                  <!-------------------------------------- re ----------------------------- -->
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--
+  <button type="button" class="btn btn-danger language-btn m-5" data-container="body" data-toggle="popover" data-placement="right"
+    data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+    Popover on right
+  </button>
 -->
 
+  <button type="button" class="btn btn-secondary language-btn m-5" data-container="body" data-toggle="popover" data-placement="top"
+    data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+    <i class="fa fa-language"></i>
+  </button>
 
-  <div class=" col-md-4 offset-md-8 mt-5">
-    <div class="card card-body">
-
-      <h3 class="text-center">{{'Se connecter' | translate }}</h3>
-      <!-- test -->
-      <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
-        <!-- test -->
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-            </span>
-          </div>
-          <!--[(ngModel)]="user.email"   name="email"-->
-          <!-- test -->
-          <input type="email" placeholder="Email" [(ngModel)]="user.username" [ngClass]="{'is-invalid':userEmail.errors && userEmail.touched}"
-            class="form-control" name="username" #userEmail="ngModel" required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-            aria-label="Email" aria-describedby="basic-addon1">
-
-          <div [hidden]="!userEmail.errors?.required" class="invalid-feedback">
-            {{'L\' email est obligatoire'| translate}}
-          </div>
-
-          <div [hidden]="!userEmail.errors?.pattern" class="invalid-feedback">
-            {{'L\'email n\'est pas valide'| translate }}
-          </div>
-        </div>
-        <!-- test -->
-
-
-
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">
-              <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-            </span>
-          </div>
-          <!--input type="password" class="form-control" placeholder="{{'Mot de passe' | translate}}" aria-label="Password" aria-describedby="basic-addon1"-->
-          <!-- test -->
-          <input type="password" placeholder="{{'Mot de passe' | translate}}" [(ngModel)]="user.password" [ngClass]="{'is-invalid':userPassword.errors && userPassword.touched}"
-            class="form-control" name="password" #userPassword="ngModel" required pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
-            aria-label="Password" aria-describedby="basic-addon1">
-          <div [hidden]="!userPassword.errors?.required" class="invalid-feedback">
-            {{'Le mot de passe est obligatoire' | translate }}
-          </div>
-
-          <div [hidden]="!userPassword.errors?.pattern" class="invalid-feedback">
-            {{'Le mot de passe doit contenit au moins une majuscule, une minuscule , un chiffre et un caractère spéciale' | translate
-            }}
-          </div>
-          <!-- test -->
-        </div>
-
-        <div class="form-check mb-3">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">{{'Se souvenir de moi'| translate }}</label>
-        </div>
-
-        <!--button type="submit" class="btn btn-primary btn-block">{{'Se Connecter' | translate}}</button-->
-        <button [disabled]="!loginForm.form.valid" class="btn btn-block mb-3" [ngClass]="{'btn-primary': loginForm.form.valid }">{{'Se Connecter' | translate}}</button>
-      </form>
-      <a routerLink="signup" class="text-center mt-3">{{'Creer un compte' | translate }}</a>
-      <a href="#" class="text-center mb-3">{{'Ou' | translate}} {{'Se connecter' | translate}} {{'avec' | translate}}</a>
-      <!--
-        <div>
-          <a href="#">
-            <img src="../assets/facebook.png" alt="Facebook login ..." class="img-fluid">
-          </a>
-          <a href="#">
-            <img src="../assets/gmail.png" alt="Gmail login ..." class="mt-2 img-fluid">
-          </a>
-        </div>
-      -->
-
-      <div>
-        <span>
-          <button type="button" (click)="auth.login()" class="btn btn-block fa-facebook-custom mb-1">
-            <i class="fa fa-facebook "></i> Facebook</button>
-        </span>
-
-        <span>
-          <button type="button" class="btn btn-block  fa-google-custom ">
-            <i class="fa fa-google-plus"></i> Google +</button>
-        </span>
-      </div>
-
-
-    </div>
-  </div>
+</body>

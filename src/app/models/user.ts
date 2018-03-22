@@ -3,7 +3,9 @@ export interface User {
     lastName: string,
     email: string,
     password: string,
-    birthdate: {
+    birthdateInfo?: {
         formatted?: string
-    }
+    },
+    birthdate?: string
+
 }

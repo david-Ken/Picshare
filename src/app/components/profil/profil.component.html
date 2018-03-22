@@ -88,18 +88,14 @@
       <!-- accordion -->
       <div id="accordion">
         <div class="collapse show " id="collapseGroups" data-parent="#accordion">
+          <div>
+            <a href="#" class="btn btn-outline-success   ml-5 mt-5" data-toggle="modal" data-target=".create-group-modal">Creer un groupe</a>
+          </div>
+
           <div class="row m-5">
             <div class="col-md-3">
               <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="../../../assets/pexels-photo-185933.png" alt="Card image cap">
-                <!--
-                <div>
-                  <button class="btn btn-circle btn-lg ">
-                    <i class="fa fa-users"></i>
-                  </button>
-                </div>
-
-              -->
                 <div class="card-body">
                   <h5 class="card-title">Clermonteck</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -377,3 +373,71 @@
     </div>
   </div>
   <!--/ file upload modal -->
+
+  <!-- create group modal -->
+  <div class="modal fade bd-example-modal-lg create-group-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Creer un groupe</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <div class="container">
+            <form>
+              <div class="form-group row">
+                <label for="groupName" class="col-sm-3 col-form-label">
+                  <i class="fa fa-user mr-2"></i> Nom du groupe</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="groupName" placeholder="Choisir le nom du groupe">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="type-of-group" class="col-sm-3 col-form-label">
+                  <i class="fa fa-venus-mars mr-2"></i>Type du groupe</label>
+                <div class="col-sm-9">
+                  <select class="form-control">
+                    <option>Privée</option>
+                    <option>Publique</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="group-photo" class="col-sm-3 col-form-label">
+                  <i class="fa fa-user mr-2"></i>Photo du groupe</label>
+                <div class="col-sm-9">
+                  <!-- Drag and drop zone -->
+                  <image-upload buttonCaption="{{'Choisir une photo'|translate}}" dropBoxMessage="{{'Ou Glisser votre image içi'|translate}}"
+                    clearButtonCaption="Effacer" (change)="onUploadButton($event)" (uploadFinished)="onDragAndDrop($event)">
+                  </image-upload>
+                  <!-- /Drag and drop zone -->
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="group-info" class="col-sm-3 col-form-label">
+                  <i class="fa fa-address-card mr-2"></i>{{'Description'|translate}} </label>
+                <div class="col-sm-9">
+                  <textarea type="text" class="form-control" id="group-info" rows="3"></textarea>
+                </div>
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">{{'Enregistrer'|translate}}</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">{{'Annuler'|translate}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /create group modal -->

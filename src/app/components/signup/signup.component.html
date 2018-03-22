@@ -6,8 +6,8 @@
       <div class="form-row">
         <div class="form-group col-md-6 ">
           <label>{{'Nom'|translate}}</label>
-          <input type="text" [(ngModel)]="user.lastName" [ngClass]="{'is-invalid':userLastName.errors && userLastName.touched}" class="form-control"
-            name="lastName" #userLastName="ngModel" required minlength="2">
+          <input type="text" [(ngModel)]="newUser.lastName" [ngClass]="{'is-invalid':userLastName.errors && userLastName.touched}"
+            class="form-control" name="lastName" #userLastName="ngModel" required minlength="2">
           <div [hidden]="!userLastName.errors?.required" class="invalid-feedback">
             {{'Le nom est obligatoire'|translate}}
           </div>
@@ -19,7 +19,7 @@
 
         <div class="form-group col-md-6">
           <label>{{'Prenom' | translate}}</label>
-          <input type="text" [(ngModel)]="user.firstName" [ngClass]="{'is-invalid':userFirstName.errors && userFirstName.touched}"
+          <input type="text" [(ngModel)]="newUser.firstName" [ngClass]="{'is-invalid':userFirstName.errors && userFirstName.touched}"
             class="form-control" name="firstName" #userFirstName="ngModel" required minlength="2">
           <div [hidden]="!userFirstName.errors?.required" class="invalid-feedback">
             {{'Le prenom est obligatoire' | translate }}
@@ -34,7 +34,7 @@
       <!-- Birthdate -->
       <div class="form-group" novalidate>
         <label>{{'Date de naissance'| translate}}</label>
-        <my-date-picker name="mydate" [options]="myDatePickerOptions" [(ngModel)]="user.birthdate" [ngClass]="{'is-invalid':userBirthDate.errors && userBirthDate.touched}"
+        <my-date-picker name="mydate" [options]="myDatePickerOptions" [(ngModel)]="newUser.birthdateInfo" [ngClass]="{'is-invalid':userBirthDate.errors && userBirthDate.touched}"
           class="form-control" name="birthdate" #userBirthDate="ngModel" required></my-date-picker>
 
         <div [hidden]="!userBirthDate.errors?.required" class="invalid-feedback">
@@ -45,7 +45,7 @@
       <!-- Email -->
       <div class="form-group">
         <label>Email</label>
-        <input type="email" [(ngModel)]="user.email" [ngClass]="{'is-invalid':userEmail.errors && userEmail.touched}" class="form-control"
+        <input type="email" [(ngModel)]="newUser.email" [ngClass]="{'is-invalid':userEmail.errors && userEmail.touched}" class="form-control"
           name="email" #userEmail="ngModel" required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
         <div [hidden]="!userEmail.errors?.required" class="invalid-feedback">
           {{'L\' email est obligatoire'| translate}}
@@ -59,7 +59,7 @@
       <!-- Password -->
       <div class="form-group">
         <label>{{'Mot de passe' | translate}}</label>
-        <input type="password" [(ngModel)]="user.password" [ngClass]="{'is-invalid':userPassword.errors && userPassword.touched}"
+        <input type="password" [(ngModel)]="newUser.password" [ngClass]="{'is-invalid':userPassword.errors && userPassword.touched}"
           class="form-control" name="password" #userPassword="ngModel" required pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$">
         <div [hidden]="!userPassword.errors?.required" class="invalid-feedback">
           {{'Le mot de passe est obligatoire' | translate }}

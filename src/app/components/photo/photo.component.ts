@@ -20,6 +20,7 @@ export class PhotoComponent implements OnInit {
   }
 
 
+
   photo: any = [];
 
   constructor(private photoBoardDataService: PhotoBoardService,
@@ -31,6 +32,10 @@ export class PhotoComponent implements OnInit {
       +this.route.snapshot.params['id']
     );
     console.log(this.photo);
+
+    //this.photoBoardDataService.getAll().subscribe(data => console.log(data));
+
+
   }
 
   /*
