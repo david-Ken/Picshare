@@ -4,6 +4,7 @@ import { of } from 'rxjs/observable/of'
 
 import { photos } from '../models/photos';
 import { Comments } from '../models/comments';
+import { User } from '../models/user';
 
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
@@ -21,6 +22,7 @@ export class PhotoBoardService {
   commentedPhoto: photos;
   connectionInfo: any;
   data: Observable<any>;
+
 
 
   comments: Comments = {
@@ -149,5 +151,11 @@ export class PhotoBoardService {
 
   connection(connectionInfo): Observable<any> {
     return this.http.post('http://localhost:8080/login', connectionInfo, httpOptions);
+  }
+
+  // test post request 
+
+  addUser(newUser): Observable<any> {
+    return this.http.post('http://localhost:8080/user/add', newUser);
   }
 }

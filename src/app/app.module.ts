@@ -27,6 +27,7 @@ import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 import { ImageUploadModule } from "angular2-image-upload";
 import { PhotoComponent } from './components/photo/photo.component';
 import { ConnectionService } from './services/connection.service';
+import { LoginPage2Component } from './components/login-page-2/login-page-2.component';
 
 
 
@@ -46,7 +47,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     PhotoBoardComponent,
     ProfilComponent,
     EditProfilComponent,
-    PhotoComponent
+    PhotoComponent,
+    LoginPage2Component
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user';
 import { MyDatePickerModule } from 'mydatepicker';
 import { IMyDpOptions } from 'mydatepicker';
+import { PhotoBoardService } from '../../services/photo-board.service';
 
 @Component({
   selector: 'app-signup',
@@ -9,7 +10,7 @@ import { IMyDpOptions } from 'mydatepicker';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  user: User = {
+  newUser: User = {
     firstName: '',
     lastName: '',
     email: '',
@@ -17,12 +18,19 @@ export class SignupComponent implements OnInit {
     birthdate: null
   }
 
+  newUserData: User = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    birthdate: null
+  };
 
   public myDatePickerOptions: IMyDpOptions = {
     dateFormat: 'dd/mm/yyyy',
   };
 
-  constructor() { }
+  constructor(private photoBoardDataService: PhotoBoardService) { }
 
   ngOnInit() {
   }
@@ -31,8 +39,25 @@ export class SignupComponent implements OnInit {
     if (!valid) {
       console.log('Form is not valid');
     } else {
-      console.log(this.user);
+      console.log(this.newUser);
+
+      this.newUserData.lastName = this.newUser.lastName;
+      this.newUserData.firstName = this.newUser.firstName;
+      this.newUserData.email = this.newUser.email;
+      this.newUserData.password = this.newUser.password;
+      this.newUserData.birthdate = this.newUser.birthdateInfo.formatted;
+
+      this.photoBoardDataService.addUser(this.newUserData);
     }
+    /*
+        this.newUser = {
+          firstName: '',
+          lastName: '',
+          email: '',
+          password: '',
+          birthdate: null
+        }
+    */
   }
 
 }
