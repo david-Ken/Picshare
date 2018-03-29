@@ -18,11 +18,13 @@ export class SignupComponent implements OnInit {
     birthdate: null
   }
 
-  newUserData: User = {
-    firstName: '',
-    lastName: '',
+  newUserData = {
+    firstname: '',
+    lastname: '',
+    username: '',
     email: '',
     password: '',
+    biographie: '',
     birthdate: null
   };
 
@@ -33,23 +35,28 @@ export class SignupComponent implements OnInit {
   constructor(private photoBoardDataService: PhotoBoardService) { }
 
   ngOnInit() {
+    this.photoBoardDataService.testRequest().subscribe(data => console.log(data));
   }
 
   onSubmit({ value, valid }: { value: User, valid: boolean }) {
     if (!valid) {
       console.log('Form is not valid');
     } else {
-      console.log(this.newUser);
 
-      this.newUserData.lastName = this.newUser.lastName;
-      this.newUserData.firstName = this.newUser.firstName;
+
+      this.newUserData.lastname = this.newUser.lastName;
+      this.newUserData.firstname = this.newUser.firstName;
       this.newUserData.email = this.newUser.email;
       this.newUserData.password = this.newUser.password;
       this.newUserData.birthdate = this.newUser.birthdateInfo.formatted;
+      this.newUserData.username = 'RaynaudOLI';
+      this.newUserData.biographie = 'toujour plus de text';
+      //  this.newUserData.birthdate = this.newUser.birthdateInfo.formatted;
 
-      this.photoBoardDataService.addUser(this.newUserData);
+      console.log(this.newUserData);
+      this.photoBoardDataService.addUser(this.newUserData).subscribe(serverResponse => console.log(serverResponse));
     }
-    /*
+    /* reset after submit 
         this.newUser = {
           firstName: '',
           lastName: '',

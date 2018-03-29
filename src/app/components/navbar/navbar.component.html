@@ -1,17 +1,23 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary" *ngIf="auth.isAuthenticated()">
+
   <div class=" container ">
-    <a routerLink="/ " class="navbar-brand ">Photo-App</a>
+    <a routerLink="/home" class="navbar-brand ">Photo-App</a>
+
     <button class="navbar-toggler " type="button " data-toggle="collapse " data-target="#navbarMain ">
       <span class="navbar-toggler-icon "></span>
     </button>
+
     <div class="collapse navbar-collapse " id="navbarMain ">
 
       <ul class="navbar-nav ml-auto ">
         <li class="nav-item ">
-          <a routerLink="signup " class="nav-link ">{{'S\'inscrire' | translate}}</a>
+          <a routerLink="signup" *ngIf="!auth.isAuthenticated()" class="nav-link ">{{'S\'inscrire' | translate}}</a>
         </li>
         <li class="nav-item ">
-          <a href="# " *ngIf="!auth.isAuthenticated() " class="nav-link ">{{'Se connecter'| translate}}</a>
+          <a href="# " *ngIf="!auth.isAuthenticated()" class="nav-link ">{{'Se connecter'| translate}}</a>
+        </li>
+        <li class="nav-item ">
+          <a routerLink="/profil" *ngIf="auth.isAuthenticated()" class="nav-link ">{{'Mon Profil'| translate}}</a>
         </li>
         <li class="nav-item ">
           <a href="# " *ngIf="auth.isAuthenticated() " (click)="auth.logout() " class="nav-link ">{{'Se Déconnecter'| translate}}</a>
@@ -20,10 +26,12 @@
 
 
       <div class="dropdown ">
-        <button class="btn btn-primary dropdown-toggle " type="button " id="dropdownMenuButton " data-toggle="dropdown
-  " aria-haspopup="true " aria-expanded="false ">
+
+        <button class="btn btn-primary dropdown-toggle " type="button " id="dropdownMenuButton " data-toggle="dropdown" aria-haspopup="true "
+          aria-expanded="false ">
           <i class="fa fa-cog "></i>
         </button>
+
         <div class="dropdown-menu " aria-labelledby="dropdownMenuButton ">
           <a (click)="switchLanguage( 'en') " class="dropdown-item ">
             <img src="../../../assets/flags/en.png " class="lang-icon " alt=" "> en

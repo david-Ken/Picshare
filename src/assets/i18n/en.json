@@ -50,5 +50,13 @@
   "Choisir une photo": "Select a photo",
   "Légende": "Description",
   "Publier": "Publish",
-  "Ou Glisser votre image içi": "Or drop your file here"
+  "Ou Glisser votre image içi": "Or drop your file here",
+  "Creer un groupe": "Create group",
+  "Nom du groupe": "My group name",
+  "Choisir le nom du groupe": "Choose the name ",
+  "Type du groupe": "Type of group",
+  "Privée": "Private",
+  "Publique": "Public",
+  "Photo du groupe": "Group photo"
+
 }

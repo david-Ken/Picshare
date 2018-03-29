@@ -156,6 +156,14 @@ export class PhotoBoardService {
   // test post request 
 
   addUser(newUser): Observable<any> {
-    return this.http.post('http://localhost:8080/user/add', newUser);
+    console.log('Loading data ...');
+    console.log(newUser);
+    return this.http.post('http://localhost:8080/user/add', newUser, httpOptions);
+  }
+
+
+  testRequest(): Observable<any> {
+    console.log('Testing data ...');
+    return this.http.post('http://localhost:8080/user/test', { name: "je passe" }, httpOptions);
   }
 }

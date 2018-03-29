@@ -16,10 +16,10 @@ import { AuthGuard } from './AuthGuard/auth.guard';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'home', component: PhotoBoardComponent/*, canActivate: [AuthGuard] */ },
-  { path: 'profil', component: ProfilComponent /*, canActivate: [AuthGuard] */ },
-  { path: 'edit', component: EditProfilComponent /*, canActivate: [AuthGuard] */ },
-  { path: 'photo/:id', component: PhotoComponent  /*, canActivate: [AuthGuard] */ },
+  { path: 'home', component: PhotoBoardComponent, canActivate: [AuthGuard] },
+  { path: 'profil', component: ProfilComponent, canActivate: [AuthGuard] },
+  { path: 'edit', component: EditProfilComponent, canActivate: [AuthGuard] },
+  { path: 'photo/:id', component: PhotoComponent, canActivate: [AuthGuard] },
   { path: 'login2', component: LoginPage2Component },
   { path: '**', component: NotFoundComponent }
 ];
