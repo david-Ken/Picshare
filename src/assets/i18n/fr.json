@@ -50,8 +50,15 @@
   "Choisir une photo": "Choisir une photo",
   "Légende": "Légende",
   "Publier": "Publier",
-  "Ou Glisser votre image içi": "Ou Glisser votre image içi"
-
+  "Ou Glisser votre image içi": "Ou Glisser votre image içi",
+  "Mon Profil": "Mon Profil",
+  "Creer un groupe": "Creer un groupe",
+  "Nom du groupe": "Nom du groupe",
+  "Choisir le nom du groupe": "Choisir le nom du groupe",
+  "Type du groupe": "Type du groupe",
+  "Privée": "Privée",
+  "Publique": "Publique",
+  "Photo du groupe": "Photo du groupe"
 
 
 }

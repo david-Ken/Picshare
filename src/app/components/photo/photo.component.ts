@@ -33,7 +33,7 @@ export class PhotoComponent implements OnInit {
     );
     console.log(this.photo);
 
-    //this.photoBoardDataService.getAll().subscribe(data => console.log(data));
+    this.photoBoardDataService.getAll().subscribe(data => console.log(data));
 
 
   }
