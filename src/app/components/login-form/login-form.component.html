@@ -58,7 +58,6 @@
                     <div class="mb-3 inner-addon left-addon">
                       <i class="fa fa-unlock-alt" aria-hidden="true"></i>
 
-                      <!--input type="password" class="form-control" placeholder="{{'Mot de passe' | translate}}" aria-label="Password" aria-describedby="basic-addon1"-->
 
                       <input type="password" placeholder="{{'Mot de passe' | translate}}" [(ngModel)]="user.password" [ngClass]="{'is-invalid':userPassword.errors && userPassword.touched}"
                         class="form-control" name="password" #userPassword="ngModel" required pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"

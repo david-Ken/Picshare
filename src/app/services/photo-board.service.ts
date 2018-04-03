@@ -27,8 +27,8 @@ export class PhotoBoardService {
 
   comments: Comments = {
     id: 'xx',
-    firstName: 'black',
-    lastName: 'panther',
+    firstName: 'Justin',
+    lastName: 'Trudeau',
     comment: null,
   };
 

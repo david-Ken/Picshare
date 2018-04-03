@@ -18,16 +18,18 @@ import { PhotoBoardComponent } from './components/photo-board/photo-board.compon
 import { PhotoBoardService } from './services/photo-board.service';
 import { ProfilComponent } from './components/profil/profil.component';
 import { EditProfilComponent } from './components/edit-profil/edit-profil.component';
-
+import { GroupComponent } from './components/group/group.component';
+import { PhotoComponent } from './components/photo/photo.component';
 
 import { AuthService } from './services/AuthService/auth.service';
 import { AuthGuard } from './AuthGuard/auth.guard';
 
 import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 import { ImageUploadModule } from "angular2-image-upload";
-import { PhotoComponent } from './components/photo/photo.component';
+
 import { ConnectionService } from './services/connection.service';
-import { LoginPage2Component } from './components/login-page-2/login-page-2.component';
+
+
 
 
 
@@ -48,7 +50,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProfilComponent,
     EditProfilComponent,
     PhotoComponent,
-    LoginPage2Component
+    GroupComponent
   ],
   imports: [
     BrowserModule,

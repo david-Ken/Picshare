@@ -1,0 +1,207 @@
+<div class="container">
+  <div class="row">
+    <!-- left side zone -->
+    <div class="col-lg-4 mt-3 text-justify">
+      <div class="col-lg-4">
+        <div class="card m-auto " style="width: 18rem;">
+          <img class="card-img-top" src="../../../assets/pexels-photo-185933.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title ">Groupe : Clermonteck</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Rejoindre</a>
+            <a href="#" class="btn btn-danger">Quitter</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mt-2 text-justify">
+        <div class="card  m-auto " style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">A Propos </h5>
+
+            <ul class="list-unstyled ">
+              <li>
+                <i class="fa fa-user-secret mr-2" style="font-weight: 10px;"></i>Admin: Marie Pimpy</li>
+              <li>
+                <i class="fa fa-lock mr-2"></i> Groupe : Privé</li>
+              <li>
+                <i class="fa fa-users  mr-2"></i>Membres : 22</li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-lg-4 mt-2">
+        <div class="card  m-auto join-group  " style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="">Demande d'adhésion</h5>
+            <div class="row">
+
+              <div class="col-4">
+                <img src="../../../assets/group/group1.jpg" alt="icon" class=" img-fluid">
+              </div>
+              <div class="col-8 m-auto">
+                Marion Leclerc
+                <div>
+                  <a href="#" class="btn btn-success  btn-sm">Accepter</a>
+                  <a href="#" class="btn btn-danger  btn-sm">Refuser</a>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="row mt-2">
+              <div class="col-4">
+                <img src="../../../assets/group/group2.jpg" alt="icon" class=" img-fluid ">
+              </div>
+              <div class="col-8 m-auto">
+                John Doe
+                <div>
+                  <a href="#" class="btn btn-success  btn-sm">Accepter</a>
+                  <a href="#" class="btn btn-danger  btn-sm">Refuser</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-2">
+              <div class="col-4">
+                <img src="../../../assets/group/group3.jpg" alt="icon" class=" img-fluid ">
+              </div>
+              <div class="col-8 m-auto">
+                Nolwen River
+                <div>
+                  <a href="#" class="btn btn-success  btn-sm">Accepter</a>
+                  <a href="#" class="btn btn-danger  btn-sm">Refuser</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /left side zone -->
+    <!-- right side zone -->
+    <div class="col-lg-8 ">
+      <div class="card mt-3">
+        <div class="card-header">
+          {{'Publier une photo'| translate}}
+        </div>
+        <div class="card-body">
+
+          <p>
+            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              {{'Publier une photo'| translate}}
+            </a>
+            <button (click)="onLoadResizeMap()" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMap"
+              aria-expanded="false" aria-controls="collapseExample">
+              {{'Taguer la photo'|translate}}
+            </button>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".closeCollapse" aria-expanded="false" aria-controls="collapseExample">
+              {{'Fermer'|translate}}
+            </button>
+          </p>
+
+          <div class="collapse closeCollapse mb-3" id="collapseExample">
+            <input placeholder="Ajouter un commentaire" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control">
+            <image-upload buttonCaption="{{'Choisir une photo'|translate}}" dropBoxMessage="{{'Ou Glisser votre image içi'|translate}}"
+              clearButtonCaption="Effacer" (change)="onUploadButton($event)" (uploadFinished)="onDragAndDrop($event)">
+            </image-upload>
+          </div>
+
+          <div class="collapse closeCollapse" id="collapseMap">
+            <div class="form-group mb-0">
+              <input placeholder="{{'Ajouter un lieu'|translate}}" autocorrect="off" autocapitalize="off" spellcheck="off" type="text"
+                class="form-control" #search [formControl]="searchControl">
+            </div>
+            <agm-map #map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+              <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+            </agm-map>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card mt-3 mb-3" *ngFor="let photo of photoboard">
+        <!-- Header -->
+        <div class="card-header">
+
+          <div class="row">
+            <div class="col-md-6  text-left">
+              <img src="../../../assets/photo-board-img/{{photo.profilPhoto}}" alt="icon" class=" img-fluid  rounded-circle  pull-left my-icon  mr-2">
+              <h5 class=" "> {{photo.firstName}} {{photo.lastName}}</h5>
+              <h5 class=" text-danger  ">{{photo.pseudo}}</h5>
+
+            </div>
+            <div class="col-md-6  text-right">
+              <h6 class="text-muted  "> en ligne il y {{photo.online}}</h6>
+              <h6 class=" text-danger ">{{photo.location}}
+                <i class="fa fa-map-marker"></i>
+              </h6>
+            </div>
+          </div>
+
+          <!-- Photo description -->
+          <div>{{photo.description}}</div>
+        </div>
+        <!-- /Photo description -->
+
+        <!-- /Header -->
+
+        <div class=" card-body p-0">
+
+          <a [routerLink]="['/photo', photo.numTest ]">
+            <img src="../../../assets/photo-board-img/{{photo.image}} " alt="userphoto" class="img-fluid p-0" data-toggle="lightbox">
+          </a>
+        </div>
+
+
+        <div class="card-footer text-muted ">
+
+          <div>
+            <span class="ml-2 mr-3">
+              <i class="fa fa-heart" [ngClass]="{'liked':photo.like && true}" (click)="setColor(photo.id)"></i> {{photo.likeNumber}}K
+            </span>
+            <span class="">
+              <i class="fa fa-comment"></i> {{photo.commentNumber}}
+            </span>
+            <span class=" mr-2 pull-right">
+              <i class="fa fa-share-alt"></i> {{photo.shareNumber}}
+            </span>
+          </div>
+
+          <!-- Comments  -->
+          <div *ngFor="let item of photo.comments">
+            <div class="ml-2">
+              <span class="font-weight-bold">{{item.firstName}} {{item.lastName}}</span>
+              <span>{{item.comment}}</span>
+            </div>
+          </div>
+          <!-- /Comments -->
+
+
+
+          <div *ngIf="isCommented">
+            <div class="ml-2">
+              <span class="font-weight-bold">{{currentComment.firstName}} {{currentComment.lastName}}</span>
+              <span>{{currentComment.comment}}</span>
+            </div>
+          </div>
+
+
+          <hr>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="{{'Ajouter un commentaire' | translate}} ..." [(ngModel)]="newComment.comment"
+              (keypress)="addComment($event,photo)" aria-label="Recipient's username" aria-describedby="basic-addon2">
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- /right side zone -->
+  </div>
+</div>
