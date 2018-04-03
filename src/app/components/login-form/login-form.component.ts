@@ -8,9 +8,11 @@ import { PhotoBoardService } from '../../services/photo-board.service';
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.css']
 })
+
+
 export class LoginFormComponent implements OnInit {
   user = {
-    username: null,
+    email: null,
     password: null
   }
 
@@ -26,7 +28,7 @@ export class LoginFormComponent implements OnInit {
       console.log("email or password invalid");
     } else {
       console.log(value);
-      this.response = this.photoBoardDataService.connection(value).subscribe(serverResponse => console.log(serverResponse));
+      /*this.response = */this.photoBoardDataService.connection(value).subscribe(serverResponse => console.log(serverResponse));
 
     }
   }

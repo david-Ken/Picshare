@@ -8,7 +8,7 @@ import { PhotoBoardComponent } from './components/photo-board/photo-board.compon
 import { ProfilComponent } from './components/profil/profil.component';
 import { EditProfilComponent } from './components/edit-profil/edit-profil.component';
 import { PhotoComponent } from './components/photo/photo.component';
-import { LoginPage2Component } from './components/login-page-2/login-page-2.component';
+import { GroupComponent } from './components/group/group.component';
 
 import { AuthGuard } from './AuthGuard/auth.guard';
 
@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'profil', component: ProfilComponent, canActivate: [AuthGuard] },
   { path: 'edit', component: EditProfilComponent, canActivate: [AuthGuard] },
   { path: 'photo/:id', component: PhotoComponent, canActivate: [AuthGuard] },
-  { path: 'login2', component: LoginPage2Component },
+  { path: 'group', component: GroupComponent, canActivate: [AuthGuard] },
   { path: '**', component: NotFoundComponent }
 ];
 

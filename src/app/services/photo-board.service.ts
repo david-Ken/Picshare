@@ -27,8 +27,8 @@ export class PhotoBoardService {
 
   comments: Comments = {
     id: 'xx',
-    firstName: 'black',
-    lastName: 'panther',
+    firstName: 'Justin',
+    lastName: 'Trudeau',
     comment: null,
   };
 
@@ -150,8 +150,16 @@ export class PhotoBoardService {
   }
 
   connection(connectionInfo): Observable<any> {
-    return this.http.post('http://localhost:8080/login', connectionInfo, httpOptions);
+    return this.http.post('http://192.168.43.52:8080/login', connectionInfo);
   }
+
+  /* 
+  connect(connectionInfo): Observable<any> {
+   this.setSession(serverToken);
+    this.router.navigate(['/home']);
+    return this.http.post('http://192.168.43.249:8080/login', connectionInfo, httpOptions);
+  }
+    */
 
   // test post request 
 

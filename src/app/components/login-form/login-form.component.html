@@ -2,8 +2,6 @@
 
 
   <!--
- 
-         
             <a (click)="switchLanguage( 'en') " class="dropdown-item ">
               <img src="../../../assets/flags/en.png " class="lang-icon " alt=" "> en
             </a>
@@ -11,11 +9,7 @@
             <a (click)="switchLanguage( 'fr') " class="dropdown-item ">
               <img src="../../../assets/flags/fr.png " alt=" "> fr
             </a>
-          
-        
-
-
-      
+              
           -->
 
 
@@ -45,8 +39,8 @@
 
                       <!--[(ngModel)]="user.email"   name="email"-->
 
-                      <input type="email" placeholder="Email" [(ngModel)]="user.username" [ngClass]="{'is-invalid':userEmail.errors && userEmail.touched}"
-                        class="form-control" name="username" #userEmail="ngModel" required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                      <input type="email" placeholder="Email" [(ngModel)]="user.email" [ngClass]="{'is-invalid':userEmail.errors && userEmail.touched}"
+                        class="form-control" name="email" #userEmail="ngModel" required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
                         aria-label="Email" aria-describedby="basic-addon1">
 
                       <div [hidden]="!userEmail.errors?.required" class="invalid-feedback font-weight-bold error-color">
@@ -64,7 +58,6 @@
                     <div class="mb-3 inner-addon left-addon">
                       <i class="fa fa-unlock-alt" aria-hidden="true"></i>
 
-                      <!--input type="password" class="form-control" placeholder="{{'Mot de passe' | translate}}" aria-label="Password" aria-describedby="basic-addon1"-->
 
                       <input type="password" placeholder="{{'Mot de passe' | translate}}" [(ngModel)]="user.password" [ngClass]="{'is-invalid':userPassword.errors && userPassword.touched}"
                         class="form-control" name="password" #userPassword="ngModel" required pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
@@ -85,7 +78,7 @@
                       <label class="form-check-label" for="exampleCheck1">{{'Se souvenir de moi'| translate }}</label>
                     </div>
 
-                    <!--button type="submit" class="btn btn-primary btn-block">{{'Se Connecter' | translate}}</button-->
+
                     <button [disabled]="!loginForm.form.valid" class="btn btn-block mb-3" [ngClass]="{'btn-primary': loginForm.form.valid }">{{'Se Connecter' | translate}}</button>
                   </form>
 
@@ -100,17 +93,7 @@
                     <hr class="mx-5 mt-5">
 
                     <a routerLink="signup" class="text-center text-white text-bold">{{'Creer un compte' | translate }}</a>
-                    <!--
-                    <span>
-                      <button type="button" (click)="auth.login()" class="btn btn-block fa-facebook-custom mb-1">
-                        <i class="fa fa-facebook "></i> Facebook</button>
-                    </span>
 
-                    <span>
-                      <button type="button" class="btn btn-block  fa-google-custom ">
-                        <i class="fa fa-google-plus"></i> Google +</button>
-                    </span>
-                  -->
                   </div>
 
                 </div>
@@ -122,16 +105,12 @@
     </div>
   </header>
 
-  <!--
-  <button type="button" class="btn btn-danger language-btn m-5" data-container="body" data-toggle="popover" data-placement="right"
-    data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-    Popover on right
-  </button>
--->
 
-  <button type="button" class="btn btn-secondary language-btn m-5" data-container="body" data-toggle="popover" data-placement="top"
-    data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+
+  <button type="button" class="btn btn-secondary language-btn m-5 pulse-button" data-container="body" data-toggle="popover"
+    data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
     <i class="fa fa-language"></i>
   </button>
+
 
 </body>

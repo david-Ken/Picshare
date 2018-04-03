@@ -14,8 +14,8 @@ export class PhotoComponent implements OnInit {
 
   newComment: Comments = {
     id: 'xx',
-    firstName: 'black',
-    lastName: 'panther',
+    firstName: 'david',
+    lastName: 'keney',
     comment: null,
   }
 
@@ -38,23 +38,24 @@ export class PhotoComponent implements OnInit {
 
   }
 
-  /*
-    addComment(event, photo: photos) {
-      this.photoBoardDataService.comments = this.newComment;
-      this.photoBoardDataService.commentedPhoto = photo;
-  
-      // Enter keyboard code == 13
-      if (event.charCode == 13) {
-        this.photoBoardDataService.addNewComment(this.photoBoardDataService.comments, this.photoBoardDataService.commentedPhoto);
-        this.newComment = {
-          id: 'xx',
-          firstName: 'black',
-          lastName: 'panther',
-          comment: null,
-        }
+
+  addComment(event, photo) {
+    this.photoBoardDataService.comments = this.newComment;
+    this.photoBoardDataService.commentedPhoto = photo;
+
+    // Enter keyboard code == 13
+    if (event.charCode == 13) {
+      this.photoBoardDataService.addNewComment(this.photoBoardDataService.comments, this.photoBoardDataService.commentedPhoto);
+      this.newComment = {
+        id: 'xx',
+        firstName: 'david',
+        lastName: 'keney',
+        comment: null,
       }
     }
-  */
+  }
+
+
   setColor(likedPhotoId) {
     this.photoBoardDataService.updateLike(likedPhotoId);
   }

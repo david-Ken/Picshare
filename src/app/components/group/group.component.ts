@@ -10,12 +10,12 @@ import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { } from '@types/googlemaps';
 
 @Component({
-  selector: 'app-photo-board',
-  templateUrl: './photo-board.component.html',
-  styleUrls: ['./photo-board.component.css']
+  selector: 'app-group',
+  templateUrl: './group.component.html',
+  styleUrls: ['./group.component.css']
 })
 
-export class PhotoBoardComponent implements OnInit {
+export class GroupComponent implements OnInit {
   profile: any;
   photoboard: photos[];
   isCommented: boolean = false;
