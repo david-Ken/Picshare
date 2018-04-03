@@ -59,6 +59,16 @@
   "Publique": "Public",
   "Photo du groupe": "Group photo",
   "Taguer la photo": "Add a location",
-  "Fermer": "Close"
+  "Fermer": "Close",
+  "Groupe": "Group",
+  "Rejoindre": "Join this group",
+  "Quitter": "Leave",
+  "A Propos": "About",
+  "Admin": "Admin",
+  "Privé": "Private",
+  "Membres": "Members",
+  "Demande d'adhésion": "Join request",
+  "Accepter": "Accept",
+  "Refuser": "Refuse"
 
 }
