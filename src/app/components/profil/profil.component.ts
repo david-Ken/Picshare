@@ -28,7 +28,7 @@ export class ProfilComponent implements OnInit {
   @ViewChild("search")
   public searchElementRef: ElementRef;
 
-  @ViewChild('myMap') myMap: AgmMap;
+  @ViewChild('map') map: AgmMap
 
   constructor(
     private mapsAPILoader: MapsAPILoader,
@@ -36,12 +36,12 @@ export class ProfilComponent implements OnInit {
     private http: HttpClient
   ) { }
 
-  ngOnChange() {
+  ngOnChanges() {
 
-    this.myMap.triggerResize();
+    this.map.triggerResize();
     setTimeout(() => {
       console.log("On change fired up");
-      this.myMap.triggerResize();
+      this.map.triggerResize();
     }, 500);
   }
 
@@ -85,8 +85,6 @@ export class ProfilComponent implements OnInit {
           console.log(this.longitude);
           console.log(this.zoom);
 
-
-
         });
       });
     });
@@ -127,7 +125,7 @@ export class ProfilComponent implements OnInit {
   }
 
   onLoadResizeMap() {
-    this.myMap.triggerResize();
     console.log("done");
+    this.map.triggerResize();
   }
 }

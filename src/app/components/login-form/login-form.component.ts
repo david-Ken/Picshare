@@ -19,7 +19,7 @@ export class LoginFormComponent implements OnInit {
   show: boolean = false;
 
   response: any;
-  constructor(private translate: TranslateService,private auth: AuthService, private photoBoardDataService: PhotoBoardService) {
+  constructor(private translate: TranslateService, private auth: AuthService, private photoBoardDataService: PhotoBoardService) {
     translate.setDefaultLang('fr');
   }
 
@@ -40,7 +40,7 @@ export class LoginFormComponent implements OnInit {
     this.translate.use(language);
   }
 
-  toggleLanguage(){
+  toggleLanguage() {
     this.show = !this.show;
   }
 

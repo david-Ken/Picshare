@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { TranslateService } from '@ngx-translate/core';
+import { AuthService } from '../../services/AuthService/auth.service';
 
 @Component({
   selector: 'app-not-found',
@@ -9,8 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class NotFoundComponent implements OnInit {
 
 
-  constructor() {
-
+  constructor(private translate: TranslateService, private auth: AuthService) {
+    translate.setDefaultLang('fr');
   }
 
   ngOnInit() {
@@ -52,5 +53,9 @@ export class NotFoundComponent implements OnInit {
         i++;
       }
     }, time);
+  }
+
+  switchLanguage(language: string): void {
+    this.translate.use(language);
   }
 }
