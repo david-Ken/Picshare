@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/AuthService/auth.service';
-
+import { TranslateService } from '@ngx-translate/core';
 import { PhotoBoardService } from '../../services/photo-board.service';
 
 @Component({
@@ -16,8 +16,11 @@ export class LoginFormComponent implements OnInit {
     password: null
   }
 
+  show: boolean = false;
+
   response: any;
-  constructor(private auth: AuthService, private photoBoardDataService: PhotoBoardService) {
+  constructor(private translate: TranslateService, private auth: AuthService, private photoBoardDataService: PhotoBoardService) {
+    translate.setDefaultLang('fr');
   }
 
   ngOnInit() {
@@ -31,6 +34,14 @@ export class LoginFormComponent implements OnInit {
       /*this.response = */this.photoBoardDataService.connection(value).subscribe(serverResponse => console.log(serverResponse));
 
     }
+  }
+
+  switchLanguage(language: string): void {
+    this.translate.use(language);
+  }
+
+  toggleLanguage() {
+    this.show = !this.show;
   }
 
 }

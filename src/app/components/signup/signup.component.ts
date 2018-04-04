@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user';
 import { MyDatePickerModule } from 'mydatepicker';
 import { IMyDpOptions } from 'mydatepicker';
+import { TranslateService } from '@ngx-translate/core';
+import { AuthService } from '../../services/AuthService/auth.service';
 import { PhotoBoardService } from '../../services/photo-board.service';
 
 @Component({
@@ -32,7 +34,9 @@ export class SignupComponent implements OnInit {
     dateFormat: 'dd/mm/yyyy',
   };
 
-  constructor(private photoBoardDataService: PhotoBoardService) { }
+  constructor(private translate: TranslateService, private photoBoardDataService: PhotoBoardService, private auth: AuthService) {
+    translate.setDefaultLang('fr');
+  }
 
   ngOnInit() {
     this.photoBoardDataService.testRequest().subscribe(data => console.log(data));
@@ -65,6 +69,10 @@ export class SignupComponent implements OnInit {
           birthdate: null
         }
     */
+  }
+
+  switchLanguage(language: string): void {
+    this.translate.use(language);
   }
 
 }

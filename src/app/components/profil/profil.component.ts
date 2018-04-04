@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, NgModule, NgZone, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, NgModule, NgZone, ViewChild, OnChanges } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 //maps modules imported
 import { AgmCoreModule, MapsAPILoader, AgmMap } from '@agm/core';
@@ -28,7 +28,7 @@ export class ProfilComponent implements OnInit {
   @ViewChild("search")
   public searchElementRef: ElementRef;
 
-  @ViewChild('myMap') myMap: AgmMap;
+  @ViewChild('map') map: AgmMap
 
   constructor(
     private mapsAPILoader: MapsAPILoader,
@@ -36,6 +36,14 @@ export class ProfilComponent implements OnInit {
     private http: HttpClient
   ) { }
 
+  ngOnChanges() {
+
+    this.map.triggerResize();
+    setTimeout(() => {
+      console.log("On change fired up");
+      this.map.triggerResize();
+    }, 500);
+  }
 
   ngOnInit() {
     //set google maps defaults
@@ -77,8 +85,6 @@ export class ProfilComponent implements OnInit {
           console.log(this.longitude);
           console.log(this.zoom);
 
-
-
         });
       });
     });
@@ -119,8 +125,7 @@ export class ProfilComponent implements OnInit {
   }
 
   onLoadResizeMap() {
-    this.myMap.triggerResize();
-    console.log("done done done");
+    console.log("done");
+    this.map.triggerResize();
   }
-
 }

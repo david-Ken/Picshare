@@ -356,3 +356,7 @@ hr {
   padding: 0px;
   border-top: 1px dashed #999;
 }
+
+.dropdown-menu {
+  min-width: 0rem;
+}

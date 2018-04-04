@@ -111,6 +111,16 @@ hr {
   bottom: 0;
 }
 
+.fixed-button-1{
+  position : fixed;
+  bottom: 20%;
+}
+
+.fixed-button-2{
+  position : fixed;
+  bottom: 10%;
+}
+
 .error-color {
   color: #8B0000;
 }
@@ -158,4 +168,23 @@ hr {
   to {
     box-shadow: 0 0 0px 45px rgba(232, 76, 61, 0);
   }
+}
+
+.display-langugage .btn-sm{
+    background: -webkit-linear-gradient(to right, rgba(38, 200, 230, 0.6), rgba(68, 87, 122, 1));
+  background: linear-gradient(to right, rgba(38, 200, 230, 0.6), rgba(68, 87, 122, 1));
+}
+
+@media (max-width: 1000px) {
+.display-langugage{
+  display: none;
+}
+}
+
+
+
+@media (max-width: 1000px) {
+.min-size{
+  font-size: 80%;
+}
 }
