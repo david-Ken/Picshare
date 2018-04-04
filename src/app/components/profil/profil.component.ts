@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, NgModule, NgZone, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, NgModule, NgZone, ViewChild, OnChanges } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 //maps modules imported
 import { AgmCoreModule, MapsAPILoader, AgmMap } from '@agm/core';
@@ -36,6 +36,14 @@ export class ProfilComponent implements OnInit {
     private http: HttpClient
   ) { }
 
+  ngOnChange() {
+
+    this.myMap.triggerResize();
+    setTimeout(() => {
+      console.log("On change fired up");
+      this.myMap.triggerResize();
+    }, 500);
+  }
 
   ngOnInit() {
     //set google maps defaults
@@ -120,7 +128,6 @@ export class ProfilComponent implements OnInit {
 
   onLoadResizeMap() {
     this.myMap.triggerResize();
-    console.log("done done done");
+    console.log("done");
   }
-
 }

@@ -1,18 +1,6 @@
 <body id="home">
 
 
-  <!--
-            <a (click)="switchLanguage( 'en') " class="dropdown-item ">
-              <img src="../../../assets/flags/en.png " class="lang-icon " alt=" "> en
-            </a>
-          
-            <a (click)="switchLanguage( 'fr') " class="dropdown-item ">
-              <img src="../../../assets/flags/fr.png " alt=" "> fr
-            </a>
-              
-          -->
-
-
   <!-- HOME SECTION -->
   <header id="home-section">
     <div class="dark-overlay">
@@ -73,7 +61,7 @@
 
                     </div>
 
-                    <div class="form-check mb-3">
+                    <div class="form-check mb-2">
                       <input type="checkbox" class="form-check-input" id="exampleCheck1">
                       <label class="form-check-label" for="exampleCheck1">{{'Se souvenir de moi'| translate }}</label>
                     </div>
@@ -85,12 +73,12 @@
                   <a href="#" class="text-center text-white">{{'Ou' | translate}}</a>
 
 
-                  <div class="text-white mt-3">
+                  <div class="text-white mt-2">
                     <span>
                       <button type="button" (click)="auth.login()" class="btn btn-block fa-google-custom mb-1">
-                        Connection via les reseaux sociaux</button>
+                        <span class="min-size">Connection via les reseaux sociaux</span></button>
                     </span>
-                    <hr class="mx-5 mt-5">
+                    <hr class="mx-5 mt-3 mb-0">
 
                     <a routerLink="signup" class="text-center text-white text-bold">{{'Creer un compte' | translate }}</a>
 
@@ -105,12 +93,29 @@
     </div>
   </header>
 
-
-
-  <button type="button" class="btn btn-secondary language-btn m-5 pulse-button" data-container="body" data-toggle="popover"
-    data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+ <ul class="display-langugage">
+ <li>  
+ <button type="button"  (click)="toggleLanguage()"  class="btn btn-secondary language-btn m-5 pulse-button" >
     <i class="fa fa-language"></i>
   </button>
+  </li>
 
+    <li *ngIf="show">  
+    <button type="button"   (click)="toggleLanguage()"   class="btn  btn-sm fixed-button-1 m-5 ">
+      <a (click)="switchLanguage( 'en') " class="dropdown-item m-0 p-0 ">
+                <img src="../../../assets/flags/en.png " class="lang-icon " alt="En">
+              </a>
+  </button>
+  </li>
+ 
+
+    <li *ngIf="show">
+    <button type="button"   (click)="toggleLanguage()"   class="btn btn-sm fixed-button-2 m-5">
+     <a (click)="switchLanguage( 'fr') " class="dropdown-item m-0 p-0">
+                <img src="../../../assets/flags/fr.png " alt="Fr">
+              </a>
+  </button>
+  </li>
+ </ul>
 
 </body>
