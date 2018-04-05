@@ -115,6 +115,14 @@
         </a>
       </button>
     </li>
+
+    <li *ngIf="show">
+      <button type="button" (click)="toggleLanguage()" class="btn btn-sm fixed-button-3 m-5">
+        <a (click)="switchLanguage( 'it') " class="dropdown-item m-0 p-0">
+          <img src="../../../assets/flags/it.png " alt="Fr">
+        </a>
+      </button>
+    </li>
   </ul>
 
 </body>

@@ -31,6 +31,7 @@ export class PhotoBoardComponent implements OnInit {
     id: this.generateID(),
     firstName: 'david',
     lastName: 'keney',
+    pseudo: '@DavidKen',
     comment: null,
   }
 
