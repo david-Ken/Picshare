@@ -32,7 +32,7 @@ export class PhotoBoardService {
     firstName: 'david',
     lastName: 'keney',
     comment: null,
-    pseudo: '@DavidKen'
+    pseudo: '@DavidKen',
   };
 
   constructor(private http: HttpClient) {

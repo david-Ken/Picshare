@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary" *ngIf="!auth.isAuthenticated()">
   <div class=" container ">
-    <a routerLink="/home" class="navbar-brand ">Photo-App</a>
+    <a routerLink="/home" class="navbar-brand ">PicShare</a>
 
     <button class="navbar-toggler " type="button " data-toggle="collapse " data-target="#navbarMain ">
       <span class="navbar-toggler-icon "></span>
@@ -32,6 +32,9 @@
 
           <a (click)="switchLanguage( 'fr') " class="dropdown-item ">
             <img src="../../../assets/flags/fr.png " alt="FR"> fr
+          </a>
+          <a (click)="switchLanguage( 'it') " class="dropdown-item ">
+            <img src="../../../assets/flags/it.png " alt=" "> IT
           </a>
         </div>
       </div>
