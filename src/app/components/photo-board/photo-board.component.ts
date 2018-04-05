@@ -1,9 +1,10 @@
 import { Component, OnInit, ElementRef, NgModule, NgZone, ViewChild } from '@angular/core';
 import { photos } from '../../models/photos';
 import { Comments } from '../../models/comments';
-
+import { HttpClient } from '@angular/common/http';
 import { PhotoBoardService } from '../../services/photo-board.service';
 import { AuthService } from '../../services/AuthService/auth.service';
+
 //maps modules imported
 import { AgmCoreModule, MapsAPILoader, AgmMap } from '@agm/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -19,9 +20,15 @@ export class PhotoBoardComponent implements OnInit {
   profile: any;
   photoboard: photos[];
   isCommented: boolean = false;
+  selectedFile = null;
+  newPicture: any;
+  newPictureDescription = '';
+  newPictureLocation = '';
+  newImageUploaded = '';
+
 
   newComment: Comments = {
-    id: 'xx',
+    id: this.generateID(),
     firstName: 'david',
     lastName: 'keney',
     comment: null,
@@ -44,14 +51,12 @@ export class PhotoBoardComponent implements OnInit {
   constructor(private photoBoardDataService: PhotoBoardService,
     private auth: AuthService,
     private mapsAPILoader: MapsAPILoader,
-    private ngZone: NgZone) { }
+    private ngZone: NgZone, private http: HttpClient) { }
+
 
   ngOnInit() {
 
-
-
     //google maps setup
-
     this.zoom = 14;
     this.latitude = 45.777222;
     this.longitude = 3.087025;
@@ -84,34 +89,14 @@ export class PhotoBoardComponent implements OnInit {
           this.longitude = place.geometry.location.lng();
           this.formatted_address = place.formatted_address;
           this.zoom = 15;
-          console.log(this.formatted_address);
-          console.log(this.latitude);
-          console.log(this.longitude);
-          console.log(this.zoom);
-
-
-
         });
       });
     });
 
 
-    /*
-        if (this.auth.userProfile) {
-          this.profile = this.auth.userProfile;
-          console.log(this.profile);
-        } else {
-          this.auth.getProfile((err, profile) => {
-            this.profile = profile;
-            console.log(this.profile);
-          });
-        }
-    */
     this.photoBoardDataService.getPhotoboard().subscribe(data => {
       this.photoboard = data;
     });
-
-    console.log(this.newComment);
   }
 
   addComment(event, photo: photos) {
@@ -140,7 +125,6 @@ export class PhotoBoardComponent implements OnInit {
       navigator.geolocation.getCurrentPosition((position) => {
         this.latitude = position.coords.latitude;
         this.longitude = position.coords.longitude;
-        //this.zoom = 14;
       });
     }
   }
@@ -149,4 +133,58 @@ export class PhotoBoardComponent implements OnInit {
     this.map.triggerResize();
     console.log("done");
   }
+
+
+
+  // if user use drag or upload button
+  onDragAndDrop(event) {
+    if (event.file) {
+      this.selectedFile = <File>event.file;
+      this.newImageUploaded = this.selectedFile.name;
+    }
+
+  }
+
+
+  onUploadFile() {
+    const head = new FormData();
+    head.append('image', this.selectedFile, this.selectedFile.name)
+    this.http.post("url", head).subscribe(response => {
+      console.log(response);
+    });
+  }
+
+  uploadPicTure() {
+    this.newPicture = {
+      id: this.newComment.id,
+      numTest: this.photoboard.length + 1,
+      firstName: this.newComment.firstName,
+      lastName: this.newComment.lastName,
+      pseudo: this.newComment.pseudo,
+      profilPhoto: 'icon01.jpg',
+      online: '2 secondes',
+      location: this.formatted_address,
+      description: this.newPictureDescription,
+      like: false,
+      image: this.newImageUploaded,
+      likeNumber: 0,
+      commentNumber: 0,
+      shareNumber: 0,
+      comments: []
+    }
+
+    this.photoBoardDataService.addNewPhoto(this.newPicture);
+    // reset input after submit
+    this.newPictureDescription = '';
+    this.formatted_address = '';
+
+  }
+
+  generateID() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  }
+
 }

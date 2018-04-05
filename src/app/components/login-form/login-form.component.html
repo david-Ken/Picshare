@@ -1,6 +1,5 @@
 <body id="home">
 
-
   <!-- HOME SECTION -->
   <header id="home-section">
     <div class="dark-overlay">
@@ -21,11 +20,10 @@
                   <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="text-left">
 
 
-                    <label for="Username" class="text-white ">Username</label>
+                    <label for="Username" class="text-white ">{{'Identifiant' | translate}}</label>
                     <div class="mb-3 inner-addon left-addon">
                       <i class="fa fa-envelope" aria-hidden="true"></i>
 
-                      <!--[(ngModel)]="user.email"   name="email"-->
 
                       <input type="email" placeholder="Email" [(ngModel)]="user.email" [ngClass]="{'is-invalid':userEmail.errors && userEmail.touched}"
                         class="form-control" name="email" #userEmail="ngModel" required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
@@ -42,7 +40,7 @@
 
 
 
-                    <label for="Password" class="text-white">Password</label>
+                    <label for="Password" class="text-white">{{'Mot de passe'| translate}}</label>
                     <div class="mb-3 inner-addon left-addon">
                       <i class="fa fa-unlock-alt" aria-hidden="true"></i>
 
@@ -76,7 +74,8 @@
                   <div class="text-white mt-2">
                     <span>
                       <button type="button" (click)="auth.login()" class="btn btn-block fa-google-custom mb-1">
-                        <span class="min-size">Connection via les reseaux sociaux</span></button>
+                        <span class="min-size">Connection via les reseaux sociaux</span>
+                      </button>
                     </span>
                     <hr class="mx-5 mt-3 mb-0">
 
@@ -93,29 +92,29 @@
     </div>
   </header>
 
- <ul class="display-langugage">
- <li>  
- <button type="button"  (click)="toggleLanguage()"  class="btn btn-secondary language-btn m-5 pulse-button" >
-    <i class="fa fa-language"></i>
-  </button>
-  </li>
-
-    <li *ngIf="show">  
-    <button type="button"   (click)="toggleLanguage()"   class="btn  btn-sm fixed-button-1 m-5 ">
-      <a (click)="switchLanguage( 'en') " class="dropdown-item m-0 p-0 ">
-                <img src="../../../assets/flags/en.png " class="lang-icon " alt="En">
-              </a>
-  </button>
-  </li>
- 
+  <ul class="display-langugage">
+    <li>
+      <button type="button" (click)="toggleLanguage()" class="btn btn-secondary language-btn m-5 pulse-button">
+        <i class="fa fa-language"></i>
+      </button>
+    </li>
 
     <li *ngIf="show">
-    <button type="button"   (click)="toggleLanguage()"   class="btn btn-sm fixed-button-2 m-5">
-     <a (click)="switchLanguage( 'fr') " class="dropdown-item m-0 p-0">
-                <img src="../../../assets/flags/fr.png " alt="Fr">
-              </a>
-  </button>
-  </li>
- </ul>
+      <button type="button" (click)="toggleLanguage()" class="btn  btn-sm fixed-button-1 m-5 ">
+        <a (click)="switchLanguage( 'en') " class="dropdown-item m-0 p-0 ">
+          <img src="../../../assets/flags/en.png " class="lang-icon " alt="En">
+        </a>
+      </button>
+    </li>
+
+
+    <li *ngIf="show">
+      <button type="button" (click)="toggleLanguage()" class="btn btn-sm fixed-button-2 m-5">
+        <a (click)="switchLanguage( 'fr') " class="dropdown-item m-0 p-0">
+          <img src="../../../assets/flags/fr.png " alt="Fr">
+        </a>
+      </button>
+    </li>
+  </ul>
 
 </body>

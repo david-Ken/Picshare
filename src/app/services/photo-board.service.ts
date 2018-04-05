@@ -18,6 +18,8 @@ const httpOptions = {
 
 @Injectable()
 export class PhotoBoardService {
+  server_Address = 'http://localhost:8080';
+
   photoBoardData: photos[];
   commentedPhoto: photos;
   connectionInfo: any;
@@ -27,9 +29,10 @@ export class PhotoBoardService {
 
   comments: Comments = {
     id: 'xx',
-    firstName: 'Justin',
-    lastName: 'Trudeau',
+    firstName: 'david',
+    lastName: 'keney',
     comment: null,
+    pseudo: '@DavidKen'
   };
 
   constructor(private http: HttpClient) {
@@ -106,7 +109,7 @@ export class PhotoBoardService {
     return of(this.photoBoardData);
   }
 
-  // create
+
   addNewComment(newComment, commentedPhoto) {
     let i: number = 0;
     for (i = 0; i < this.photoBoardData.length; i++) {
@@ -115,6 +118,10 @@ export class PhotoBoardService {
         this.photoBoardData[i].commentNumber++;
       }
     }
+  }
+
+  addNewPhoto(item) {
+    this.photoBoardData.unshift(item);
   }
 
   updateLike(likedPhotoId) {
@@ -133,45 +140,24 @@ export class PhotoBoardService {
 
   }
 
-  // get sigle photo id
-  /* getPhotoByID(id: number){
-     return this.photoBoardData.slice(0).find(photo => photo.id === id);
-   }
- */
 
-  //remove when server will be ready
+
   getPhotoByID(id: number) {
     return this.photoBoardData.slice(0).find(photo => photo.numTest == id);
   }
 
-  // test http get request 
+
   getAll(): Observable<any> {
-    return this.http.get('http://localhost:8080/user/all');
+    return this.http.get(this.server_Address + '/user/all');
   }
 
   connection(connectionInfo): Observable<any> {
-    return this.http.post('http://192.168.43.52:8080/login', connectionInfo);
+    return this.http.post(this.server_Address + '/login', connectionInfo);
   }
 
-  /* 
-  connect(connectionInfo): Observable<any> {
-   this.setSession(serverToken);
-    this.router.navigate(['/home']);
-    return this.http.post('http://192.168.43.249:8080/login', connectionInfo, httpOptions);
-  }
-    */
-
-  // test post request 
 
   addUser(newUser): Observable<any> {
-    console.log('Loading data ...');
-    console.log(newUser);
-    return this.http.post('http://localhost:8080/user/add', newUser, httpOptions);
-  }
-
-
-  testRequest(): Observable<any> {
-    console.log('Testing data ...');
-    return this.http.post('http://localhost:8080/user/test', { name: "je passe" }, httpOptions);
+    // console.log(newUser);
+    return this.http.post(this.server_Address + '/user/add', newUser, httpOptions);
   }
 }

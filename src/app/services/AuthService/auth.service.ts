@@ -14,7 +14,6 @@ export class AuthService {
     audience: 'https://davidken.eu.auth0.com/userinfo',
     redirectUri: 'http://localhost:4200/home',
     scope: 'openid profile'
-    // scope: 'openid%20profile%20email&response_type=id_token&client_id=dtLEHYwXcQzarehOmVF87KzZNzdjplnQ&redirect_uri=http://localhost:4200/home&nonce=YOUR_CRYPTOGRAPHIC_NONCE&state=YOUR_OPAQUE_VALUE'
   });
 
   constructor(public router: Router) { }
@@ -76,7 +75,6 @@ export class AuthService {
         self.userProfile = profile;
         console.log(self.userProfile);
       }
-      //cb(err, profile);
     });
   }
 }
