@@ -30,7 +30,6 @@ export class LoginFormComponent implements OnInit {
     if (!valid) {
       console.log("email or password invalid");
     } else {
-      console.log(value);
       /*this.response = */this.photoBoardDataService.connection(value).subscribe(serverResponse => console.log(serverResponse));
 
     }

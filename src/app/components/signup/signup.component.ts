@@ -39,7 +39,6 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.photoBoardDataService.testRequest().subscribe(data => console.log(data));
   }
 
   onSubmit({ value, valid }: { value: User, valid: boolean }) {

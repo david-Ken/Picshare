@@ -1,6 +1,5 @@
 <body id="home">
 
-
   <!-- HOME SECTION -->
   <header id="home-section">
     <div class="dark-overlay">
@@ -25,7 +24,6 @@
                     <div class="mb-3 inner-addon left-addon">
                       <i class="fa fa-envelope" aria-hidden="true"></i>
 
-                      <!--[(ngModel)]="user.email"   name="email"-->
 
                       <input type="email" placeholder="Email" [(ngModel)]="user.email" [ngClass]="{'is-invalid':userEmail.errors && userEmail.touched}"
                         class="form-control" name="email" #userEmail="ngModel" required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
