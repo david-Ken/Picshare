@@ -65,7 +65,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyA_vxIN9XaeR13gSvkkbACIzN2UaDfYcOs',
+      apiKey: 'YOUR API KEY',
       libraries: ["places"]
     }),
     ReactiveFormsModule,
